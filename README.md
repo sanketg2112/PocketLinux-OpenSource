@@ -2,6 +2,15 @@
 
 This repository contains the necessary open-source license, references, and custom shim source codes to adhere to the **GNU General Public License (GPL) version 2.0** for the native binaries shipped with the PocketLinux Android application.
 
+## Container images (Releases)
+
+Prebuilt Linux container images for PocketLinux are published as **GitHub Releases** on this repository.
+
+- **Catalog (manifest):** [`manifest.json`](manifest.json)  
+  Raw URL: `https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/manifest.json`
+- The app (or install tooling) should read this manifest, pick the entry matching `"latest"`, download `url`, verify `sha256`, then restore the container.
+- Large image files live only under **Releases → Assets**, not in the git tree.
+
 ## 📱 PocketLinux Application
 PocketLinux is available on the Google Play Store:
 👉 **[Get PocketLinux on Google Play Store](https://play.google.com/store/apps/details?id=com.sg.linuxgo)**
