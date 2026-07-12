@@ -1,36 +1,55 @@
-#include <stdio.h>
 #include <unistd.h>
-#include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
-/* Minimal link() shim that doesn't depend on external errno symbols.
-   It uses rename and symlink to simulate link() in PRoot. */
+/*
+ * Hardlink shim for Android/PRoot guests (LD_PRELOAD into guest ELF only).
+ * Never reference errno/__errno. Never rename() (breaks dpkg status backup).
+ */
 int link(const char *oldpath, const char *newpath) {
-    if (rename(oldpath, newpath) == 0) return 0;
-    
-    /* If rename fails, try to unlink the target and rename again */
+    struct stat st;
+    if (oldpath == 0 || newpath == 0) return -1;
+    if (lstat(oldpath, &st) != 0) return -1;
+    if (S_ISDIR(st.st_mode)) return -1;
+
     unlink(newpath);
-    if (rename(oldpath, newpath) == 0) return 0;
-    
-    /* Fallback to symlink */
-    if (symlink(oldpath, newpath) == 0) return 0;
-    
-    /* Final fallback: copy file content */
-    FILE *s = fopen(oldpath, "rb");
-    FILE *d = fopen(newpath, "wb");
-    if (s && d) {
-        char b[4096];
-        size_t z;
-        while ((z = fread(b, 1, sizeof(b), s)) > 0) {
-            if (fwrite(b, 1, z, d) != z) break;
+
+    int src = open(oldpath, O_RDONLY);
+    if (src < 0) {
+        if (symlink(oldpath, newpath) == 0) return 0;
+        return -1;
+    }
+    int dst = open(newpath, O_WRONLY | O_CREAT | O_TRUNC, st.st_mode & 0777);
+    if (dst < 0) {
+        close(src);
+        if (symlink(oldpath, newpath) == 0) return 0;
+        return -1;
+    }
+
+    char buf[8192];
+    ssize_t n;
+    int ok = 1;
+    while ((n = read(src, buf, sizeof(buf))) > 0) {
+        char *p = buf;
+        ssize_t left = n;
+        while (left > 0) {
+            ssize_t w = write(dst, p, (size_t)left);
+            if (w <= 0) { ok = 0; break; }
+            p += w;
+            left -= w;
         }
-        fclose(s);
-        fclose(d);
+        if (!ok) break;
+    }
+    if (n < 0) ok = 0;
+    close(src);
+    if (close(dst) != 0) ok = 0;
+    if (ok) {
+        chmod(newpath, st.st_mode & 0777);
         return 0;
     }
-    if (s) fclose(s);
-    if (d) fclose(d);
+    unlink(newpath);
+    if (symlink(oldpath, newpath) == 0) return 0;
     return -1;
 }
 
-/* Compatibility stubs for musl/glibc preloads */
 void __register_atfork(void *a, void *b, void *c, void *d) {}
