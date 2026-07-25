@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-07-16T17:27:57Z",
-  "latest": "v1.0.0",
+  "updated_at": "2026-07-25T18:09:47Z",
+  "latest": "v1.0.1",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/manifest.json",
   "images": [
@@ -9,16 +9,16 @@
       "id": "default",
       "version": "1.0.1",
       "tag": "v1.0.1",
-      "filename": "pocketlinux-debian-xfce-aarch64-v1.0.1.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-xfce-aarch64-v1.0.1.tar.gz",
-      "sha256": "759ca22d2e0d1eda1a53a48c99ba224b016950eead0da7251c4f121dd0b8aabc",
-      "size_bytes": 592627952,
+      "filename": "pocketlinux-archlinux-xfce-aarch64-v1.0.1.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-archlinux-xfce-aarch64-v1.0.1.tar.gz",
+      "sha256": "51b3ce50240e1071b55dd5a91ec6b5474d7d19812305bb7b102de91f71824a06",
+      "size_bytes": 1078570080,
       "arch": "aarch64",
-      "distro": "debian",
+      "distro": "archlinux",
       "desktop": "xfce",
-      "notes": "Minor adjustments to theme and stuff",
+      "notes": "Updated with pacman -Syu",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
-      "created_at": "2026-07-12T16:53:18Z"
+      "created_at": "2026-07-25T18:09:47Z"
     },
     {
       "id": "default",
