@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-07-25T18:30:00Z",
-  "latest": "v1.0.1",
+  "updated_at": "2026-07-26T16:15:18Z",
+  "latest": "v1.0.0",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/manifest.json",
   "images": [
@@ -34,6 +34,21 @@
       "notes": "Updated with pacman -Syu",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
       "created_at": "2026-07-25T18:09:47Z"
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-xfce-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-xfce-aarch64-v1.0.0.tar.gz",
+      "sha256": "b87ebcef635c8267fde037ee16a119e4fa67b7b7670c6cb209b136fb918e911c",
+      "size_bytes": 770394466,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "xfce",
+      "notes": "PocketLinux container v1.0.0",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-07-26T16:15:18Z"
     },
     {
       "id": "default",
