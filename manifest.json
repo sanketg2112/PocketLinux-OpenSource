@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-08-17T15:36:03Z",
+  "updated_at": "2026-08-22T10:05:37Z",
   "latest": "v1.0.0",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/manifest.json",
@@ -50,6 +50,21 @@
       "notes": "Minor adjustments to theme and stuff",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
       "created_at": "2026-07-12T16:53:18Z"
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-fedora-xfce-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-xfce-aarch64-v1.0.0.tar.gz",
+      "sha256": "4d17b7cd927a8b852cef90f3cf5e22d632a716cbb8fb51421e639dfa5f1da6dc",
+      "size_bytes": 592152469,
+      "arch": "aarch64",
+      "distro": "fedora",
+      "desktop": "xfce",
+      "notes": "Initial release",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-08-22T10:05:37Z"
     },
     {
       "id": "default",
