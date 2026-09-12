@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark slate behind monochrome white penguin (debug launcher). -->
+    <color name="ic_launcher_debug_background">#FF1A1A1E</color>
+</resources>

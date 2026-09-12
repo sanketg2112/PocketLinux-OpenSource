@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- i3 WM tiling grid icon -->
+    <path
+        android:fillColor="#4A9D9D"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
+    <!-- Tiling layout: left tall panel + two right panels stacked -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,7h5v10H6V7z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M13,7h5v4h-5V7z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M13,13h5v4h-5V13z"/>
+</vector>

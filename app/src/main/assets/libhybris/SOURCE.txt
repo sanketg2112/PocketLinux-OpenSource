@@ -1,0 +1,12 @@
+PocketLinux experimental libhybris runtime (arm64 / glibc guests)
+
+Source: prebuilt tree packed by tawc v1
+  https://github.com/wmww/tawc  (scripts/build-libhybris.sh)
+  https://github.com/wmww/libhybris  (stock-Android fork of libhybris/libhybris)
+
+Asset: arm64-v8a.tar  (extracted at runtime to filesDir/libhybris)
+
+This is a glibc aarch64 build. Alpine/musl guests cannot load it.
+
+Licenses: assets/licenses/libhybris/  (Apache-2.0, LGPLv2.1, MIT, and others
+listed in the upstream libhybris tree).

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Overridden per build type via resValue (PocketLinux / PocketLinux Debug). -->
+    <string name="app_name">PocketLinux</string>
+</resources>

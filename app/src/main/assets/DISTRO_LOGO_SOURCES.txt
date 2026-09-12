@@ -1,0 +1,13 @@
+Coming-soon distro logos (trademarks of their respective projects; used for identification).
+
+Fedora:     Wikimedia Commons "Fedora_icon_(2021).svg" — Fedora Project brand mark
+            https://commons.wikimedia.org/wiki/File:Fedora_icon_(2021).svg
+openSUSE:   Wikimedia Commons "OpenSUSE_Logo.svg" — openSUSE Project
+            https://commons.wikimedia.org/wiki/File:OpenSUSE_Logo.svg
+Void Linux: Wikimedia Commons "Void_Linux_logo.svg" (source: voidlinux.org logos)
+            https://commons.wikimedia.org/wiki/File:Void_Linux_logo.svg
+Artix:      Wikimedia Commons "Artix_Linux_logo.svg"
+            original: https://gitea.artixlinux.org/artix/artwork (Signet_ColorFull.svg)
+            https://commons.wikimedia.org/wiki/File:Artix_Linux_logo.svg
+
+Downloaded via Wikimedia Special:FilePath (high-resolution raster of official SVG).

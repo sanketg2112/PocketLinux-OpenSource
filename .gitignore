@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+/build/
+app/build/
+display/build/
+a11y-fix-plugin/build/
+**/.cxx/
+**/.kotlin/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+local.properties
+
+# Build outputs
+*.apk
+*.aab
+app-metadata.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Native binaries
+*.so
+*.tar
+*.tar.gz

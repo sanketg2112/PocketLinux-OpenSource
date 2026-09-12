@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Prevent Doze from throttling long-running installations when screen is off -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:name=".PocketLinuxApp"
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
+        android:largeHeap="true"
+        android:theme="@style/Theme.PocketLinux">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|smallestScreenSize|screenLayout|uiMode|density">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Large-screen / freeform: allow any aspect ratio. -->
+            <layout
+                android:defaultHeight="600dp"
+                android:defaultWidth="300dp"
+                android:minHeight="300dp"
+                android:minWidth="300dp" />
+        </activity>
+
+        <!-- Foreground service: runs bootstrap in background so app can be minimised.
+             stopWithTask=false ensures it survives the user swiping the app away. -->
+        <service
+            android:name=".SetupForegroundService"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="dataSync" />
+
+
+
+        <!-- Foreground service: runs backup and restore in background -->
+        <service
+            android:name=".BackupRestoreService"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- Keeps GUI/terminal sessions alive while the app is backgrounded -->
+        <service
+            android:name=".SessionKeepAliveService"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps Linux container desktop and terminal sessions alive while PocketLinux is in the background" />
+        </service>
+
+        <!-- Display server process — FGS so :x11 is not reclaimed in background -->
+        <service
+            android:name=".X11Service"
+            android:exported="false"
+            android:process=":x11"
+            android:stopWithTask="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Hosts the Linux X11 display server for container GUI sessions" />
+        </service>
+
+        <!-- Same task as MainActivity (no separate taskAffinity) so GUI opens in-app
+             like X11, not as a second recents/window. Still :wayland process for the
+             compositor; process ≠ task. -->
+        <activity
+            android:name=".WaylandActivity"
+            android:exported="false"
+            android:process=":wayland"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|smallestScreenSize|screenLayout|uiMode|density"
+            android:theme="@style/Theme.PocketLinux">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="wayland_compositor" />
+        </activity>
+
+        <receiver
+            android:name=".SessionTerminateReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.sg.linuxgo.ACTION_TERMINATE_SESSION" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

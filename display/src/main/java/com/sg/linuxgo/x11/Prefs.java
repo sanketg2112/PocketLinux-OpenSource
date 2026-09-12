@@ -1,0 +1,110 @@
+package com.sg.linuxgo.x11;
+
+import java.util.HashMap;
+import android.content.Context;
+import com.sg.linuxgo.x11.utils.X11ExtraKeys;
+
+public class Prefs extends LoriePreferences.PrefsProto {
+  public final ListPreference displayResolutionMode = new ListPreference("displayResolutionMode", "native", R.array.displayResolutionVariants, R.array.displayResolutionVariants);
+  public final IntPreference displayScale = new IntPreference("displayScale", 100);
+  public final ListPreference displayResolutionExact = new ListPreference("displayResolutionExact", "1280x1024", R.array.displayResolution, R.array.displayResolution);
+  public final StringPreference displayResolutionCustom = new StringPreference("displayResolutionCustom", "1280x1024");
+  public final ListPreference displayFilteringMode = new ListPreference("displayFilteringMode", "nearest", R.array.displayFilteringVariants, R.array.displayFilteringVariants);
+  public final BooleanPreference adjustResolution = new BooleanPreference("adjustResolution", false);
+  public final BooleanPreference displayStretch = new BooleanPreference("displayStretch", false);
+  public final BooleanPreference Reseed = new BooleanPreference("Reseed", true);
+  public final BooleanPreference PIP = new BooleanPreference("PIP", false);
+  public final BooleanPreference fullscreen = new BooleanPreference("fullscreen", true);
+  public final ListPreference forceOrientation = new ListPreference("forceOrientation", "auto", R.array.forceOrientationVariants, R.array.forceOrientationVariants);
+  public final BooleanPreference hideCutout = new BooleanPreference("hideCutout", false);
+  public final BooleanPreference keepScreenOn = new BooleanPreference("keepScreenOn", true);
+  public final ListPreference touchMode = new ListPreference("touchMode", "1", R.array.touchscreenInputModesEntries, R.array.touchscreenInputModesValues);
+  public final BooleanPreference scaleTouchpad = new BooleanPreference("scaleTouchpad", true);
+  public final BooleanPreference showStylusClickOverride = new BooleanPreference("showStylusClickOverride", false);
+  public final BooleanPreference stylusIsMouse = new BooleanPreference("stylusIsMouse", false);
+  public final BooleanPreference stylusButtonContactModifierMode = new BooleanPreference("stylusButtonContactModifierMode", false);
+  public final BooleanPreference showMouseHelper = new BooleanPreference("showMouseHelper", false);
+  public final BooleanPreference pointerCapture = new BooleanPreference("pointerCapture", false);
+  public final ListPreference transformCapturedPointer = new ListPreference("transformCapturedPointer", "no", R.array.transformCapturedPointerEntries, R.array.transformCapturedPointerValues);
+  public final IntPreference capturedPointerSpeedFactor = new IntPreference("capturedPointerSpeedFactor", 100);
+  public final BooleanPreference tapToMove = new BooleanPreference("tapToMove", false);
+  public final BooleanPreference showAdditionalKbd = new BooleanPreference("showAdditionalKbd", true);
+  public final BooleanPreference additionalKbdVisible = new BooleanPreference("additionalKbdVisible", true);
+  public final BooleanPreference showIMEWhileExternalConnected = new BooleanPreference("showIMEWhileExternalConnected", true);
+  public final BooleanPreference preferScancodes = new BooleanPreference("preferScancodes", false);
+  public final BooleanPreference hardwareKbdScancodesWorkaround = new BooleanPreference("hardwareKbdScancodesWorkaround", true);
+  public final BooleanPreference dexMetaKeyCapture = new BooleanPreference("dexMetaKeyCapture", false);
+
+  public final BooleanPreference pauseKeyInterceptingWithEsc = new BooleanPreference("pauseKeyInterceptingWithEsc", false);
+  public final BooleanPreference filterOutWinkey = new BooleanPreference("filterOutWinkey", false);
+  public final BooleanPreference enforceCharBasedInput = new BooleanPreference("enforceCharBasedInput", false);
+  public final BooleanPreference clipboardEnable = new BooleanPreference("clipboardEnable", true);
+  public final BooleanPreference storeSecondaryDisplayPreferencesSeparately = new BooleanPreference("storeSecondaryDisplayPreferencesSeparately", false);
+  public final BooleanPreference adjustHeightForEK = new BooleanPreference("adjustHeightForEK", false);
+  public final BooleanPreference useX11EKBarBehaviour = new BooleanPreference("useX11EKBarBehaviour", false);
+  public final IntPreference opacityEKBar = new IntPreference("opacityEKBar", 100);
+  public final ListPreference swipeUpAction = new ListPreference("swipeUpAction", "no action", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference swipeDownAction = new ListPreference("swipeDownAction", "toggle additional key bar", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference volumeUpAction = new ListPreference("volumeUpAction", "no action", R.array.userActionsVolumeUpValues, R.array.userActionsVolumeUpValues);
+  public final ListPreference volumeDownAction = new ListPreference("volumeDownAction", "no action", R.array.userActionsVolumeDownValues, R.array.userActionsVolumeDownValues);
+  public final ListPreference backButtonAction = new ListPreference("backButtonAction", "toggle soft keyboard", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference notificationTapAction = new ListPreference("notificationTapAction", "open preferences", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference notificationButton0Action = new ListPreference("notificationButton0Action", "open preferences", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference notificationButton1Action = new ListPreference("notificationButton1Action", "exit", R.array.userActionsValues, R.array.userActionsValues);
+  public final ListPreference mediaKeysAction = new ListPreference("mediaKeysAction", "no action", R.array.userActionsMediaKeyValues, R.array.userActionsMediaKeyValues);
+  public final StringPreference extra_keys_config = new StringPreference("extra_keys_config", X11ExtraKeys.DEFAULT_IVALUE_EXTRA_KEYS);
+  public final HashMap<String, Preference> keys = new HashMap<>() {{
+    put("displayResolutionMode", displayResolutionMode);
+    put("displayScale", displayScale);
+    put("displayResolutionExact", displayResolutionExact);
+    put("displayResolutionCustom", displayResolutionCustom);
+    put("displayFilteringMode", displayFilteringMode);
+    put("adjustResolution", adjustResolution);
+    put("displayStretch", displayStretch);
+    put("Reseed", Reseed);
+    put("PIP", PIP);
+    put("fullscreen", fullscreen);
+    put("forceOrientation", forceOrientation);
+    put("hideCutout", hideCutout);
+    put("keepScreenOn", keepScreenOn);
+    put("touchMode", touchMode);
+    put("scaleTouchpad", scaleTouchpad);
+    put("showStylusClickOverride", showStylusClickOverride);
+    put("stylusIsMouse", stylusIsMouse);
+    put("stylusButtonContactModifierMode", stylusButtonContactModifierMode);
+    put("showMouseHelper", showMouseHelper);
+    put("pointerCapture", pointerCapture);
+    put("transformCapturedPointer", transformCapturedPointer);
+    put("capturedPointerSpeedFactor", capturedPointerSpeedFactor);
+    put("tapToMove", tapToMove);
+    put("showAdditionalKbd", showAdditionalKbd);
+    put("additionalKbdVisible", additionalKbdVisible);
+    put("showIMEWhileExternalConnected", showIMEWhileExternalConnected);
+    put("preferScancodes", preferScancodes);
+    put("hardwareKbdScancodesWorkaround", hardwareKbdScancodesWorkaround);
+    put("dexMetaKeyCapture", dexMetaKeyCapture);
+
+    put("pauseKeyInterceptingWithEsc", pauseKeyInterceptingWithEsc);
+    put("filterOutWinkey", filterOutWinkey);
+    put("enforceCharBasedInput", enforceCharBasedInput);
+    put("clipboardEnable", clipboardEnable);
+    put("storeSecondaryDisplayPreferencesSeparately", storeSecondaryDisplayPreferencesSeparately);
+    put("adjustHeightForEK", adjustHeightForEK);
+    put("useX11EKBarBehaviour", useX11EKBarBehaviour);
+    put("opacityEKBar", opacityEKBar);
+    put("swipeUpAction", swipeUpAction);
+    put("swipeDownAction", swipeDownAction);
+    put("volumeUpAction", volumeUpAction);
+    put("volumeDownAction", volumeDownAction);
+    put("backButtonAction", backButtonAction);
+    put("notificationTapAction", notificationTapAction);
+    put("notificationButton0Action", notificationButton0Action);
+    put("notificationButton1Action", notificationButton1Action);
+    put("mediaKeysAction", mediaKeysAction);
+    put("extra_keys_config", extra_keys_config);
+  }};
+
+  public Prefs(Context ctx) {
+    super(ctx);
+  }
+}

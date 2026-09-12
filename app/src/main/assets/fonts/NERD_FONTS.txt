@@ -1,0 +1,16 @@
+Nerd Fonts used by the PocketLinux terminal.
+
+Source: https://github.com/ryanoasis/nerd-fonts
+Release: v3.5.0
+License: SIL Open Font License 1.1 (see each upstream family; Nerd Fonts patching is OFL)
+
+Bundled:
+- MesloLGS-NF-Regular.ttf (MesloLGS Nerd Font)
+- SymbolsNerdFontMono-Regular.ttf (icons only, fallback for every face)
+- JetBrainsMono-400.ttf (already JetBrainsMono Nerd Font Mono Regular)
+- FiraCodeNerdFontMono-Regular.ttf
+- HackNerdFontMono-Regular.ttf
+- CaskaydiaCoveNerdFontMono-Regular.ttf
+
+The renderer always stacks a Nerd Font fallback so starship / powerline / file
+icons draw even when the user picks an unpatched family.

@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Awesome WM "A" logo -->
+    <path
+        android:fillColor="#535D6C"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5.5L6.5,18h2.5l1,-2.5h4l1,2.5h2.5L12,5.5zM10.8,13.5L12,10l1.2,3.5h-2.4z"/>
+</vector>

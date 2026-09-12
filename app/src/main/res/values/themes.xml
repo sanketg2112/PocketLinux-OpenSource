@@ -1,0 +1,92 @@
+<resources>
+    <attr name="dividerColor" format="color" />
+
+    <style name="Theme.PocketLinux" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Main Colors -->
+        <item name="colorPrimary">#00E5FF</item> <!-- Cyan Accent -->
+        <item name="colorPrimaryVariant">#00B8D4</item>
+        <item name="colorOnPrimary">#050505</item> <!-- Dark Text on Cyan -->
+        
+        <item name="colorSecondary">#00E5FF</item>
+        <item name="colorSecondaryVariant">#00B8D4</item>
+        <item name="colorOnSecondary">#050505</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">#1B1B1F</item>
+        <item name="android:colorBackground">#1B1B1F</item>
+        <item name="colorSurface">#2C2C30</item>
+        <item name="colorOnSurface">#E0E0E0</item>
+        
+        <!-- Edge-to-edge: transparent system bars; app draws behind them.
+             Content uses WindowInsets / statusBarsPadding so UI is not under the status bar. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <!-- Theme Overlay specifically for settings bottom sheet on light theme background -->
+    <style name="BottomSheetLightThemeOverlay">
+        <!-- Accent/Primary color for focused states, checked buttons, active slider -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryVariant">#2196F3</item>
+        <item name="colorAccent">#2196F3</item>
+        <item name="colorControlActivated">#2196F3</item>
+        
+        <item name="colorSecondary">#2196F3</item>
+        <item name="colorSecondaryVariant">#2196F3</item>
+        
+        <!-- Backgrounds and text for light theme bottom sheet -->
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#1C1C1E</item> <!-- Dark text / stroke base color -->
+        <item name="android:textColorPrimary">#1C1C1E</item>
+        <item name="android:textColorSecondary">#555555</item>
+        <item name="android:textColorHint">#555555</item>
+        <item name="dividerColor">#E5E5EA</item>
+    </style>
+
+    <!-- Theme Overlay specifically for settings bottom sheet on dark theme background -->
+    <style name="BottomSheetDarkThemeOverlay">
+        <!-- Accent/Primary color for focused states, checked buttons, active slider -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryVariant">#2196F3</item>
+        <item name="colorAccent">#2196F3</item>
+        <item name="colorControlActivated">#2196F3</item>
+        
+        <item name="colorSecondary">#2196F3</item>
+        <item name="colorSecondaryVariant">#2196F3</item>
+        
+        <!-- Backgrounds and text for dark theme bottom sheet -->
+        <item name="android:windowBackground">#1B1B1F</item>
+        <item name="android:colorBackground">#1B1B1F</item>
+        <item name="colorSurface">#2C2C30</item>
+        <item name="colorOnSurface">#FFFFFF</item> <!-- White text / stroke base color -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#8E8E93</item>
+        <item name="android:textColorHint">#8E8E93</item>
+        <item name="dividerColor">#27272D</item>
+    </style>
+
+    <style name="Theme.SheetLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.SheetDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">#0E0E11</item>
+        <item name="android:statusBarColor">#0E0E11</item>
+        <item name="android:navigationBarColor">#0E0E11</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

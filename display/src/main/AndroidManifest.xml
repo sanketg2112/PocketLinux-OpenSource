@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+    <application
+        android:hardwareAccelerated="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="com.sg.linuxgo.x11.MainActivity"
+            android:configChanges="fontScale|orientation|screenSize|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|screenLayout|touchscreen|uiMode|smallestScreenSize|density"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:taskAffinity=".sgx11"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.sg.linuxgo.x11.LoriePreferences"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="false"
+            android:taskAffinity=".sgx11.preferences"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <meta-data
+            android:name="com.samsung.android.multidisplay.keep_process_alive"
+            android:value="false" />
+        <meta-data
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="true" />
+
+
+
+        <receiver
+            android:name="com.sg.linuxgo.x11.LoriePreferences$Receiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.sg.linuxgo.x11.CHANGE_PREFERENCE" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
