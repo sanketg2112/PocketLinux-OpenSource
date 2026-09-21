@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "updated_at": "2026-09-21T18:00:00Z",
+  "repo": "sanketg2112/PocketLinux-OpenSource",
+  "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/software_manifest.json",
+  "hidden_apps": [],
+  "apps": [
+    {
+      "id": "chromium",
+      "name": "Chromium",
+      "summary": "Chrome-based web browser",
+      "description": "Open-source Chromium browser. After install, open it from the desktop menu.",
+      "category": "internet",
+      "large_download": true,
+      "needs_sandbox_wrapper": true,
+      "binaries": [
+        "chromium",
+        "chromium-browser"
+      ],
+      "packages": {
+        "apt": [
+          "chromium",
+          "chromium-browser"
+        ],
+        "ubuntu": [
+          "chromium",
+          "chromium-browser"
+        ],
+        "pacman": [
+          "chromium"
+        ],
+        "apk": [
+          "chromium"
+        ]
+      }
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "summary": "Mozilla web browser",
+      "description": "Firefox (ESR on Debian/Ubuntu/Kali). Find it in the desktop menu after install.",
+      "category": "internet",
+      "large_download": true,
+      "needs_sandbox_wrapper": true,
+      "binaries": [
+        "firefox",
+        "firefox-esr"
+      ],
+      "packages": {
+        "apt": [
+          "firefox-esr",
+          "firefox"
+        ],
+        "debian": [
+          "firefox-esr",
+          "firefox"
+        ],
+        "ubuntu": [
+          "firefox-esr",
+          "firefox"
+        ],
+        "kali": [
+          "firefox-esr",
+          "firefox"
+        ],
+        "pacman": [
+          "firefox"
+        ],
+        "apk": [
+          "firefox"
+        ],
+        "dnf": [
+          "firefox"
+        ],
+        "xbps": [
+          "firefox"
+        ],
+        "zypper": [
+          "MozillaFirefox",
+          "firefox"
+        ]
+      }
+    },
+    {
+      "id": "thunderbird",
+      "name": "Thunderbird",
+      "summary": "Email client",
+      "description": "Mozilla Thunderbird mail and calendar. Works in the desktop session after install.",
+      "category": "internet",
+      "large_download": true,
+      "needs_sandbox_wrapper": true,
+      "binaries": [
+        "thunderbird"
+      ],
+      "packages": {
+        "apt": [
+          "thunderbird"
+        ],
+        "pacman": [
+          "thunderbird"
+        ],
+        "dnf": [
+          "thunderbird"
+        ],
+        "zypper": [
+          "MozillaThunderbird",
+          "thunderbird"
+        ]
+      }
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code",
+      "summary": "Code editor (OSS / Code)",
+      "description": "Visual Studio Code. Distro package is code-oss or code when available; Debian-family images download Microsoft\u2019s .deb. Can also be installed directly from pre-packaged GitHub releases.",
+      "category": "development",
+      "large_download": true,
+      "needs_sandbox_wrapper": true,
+      "binaries": [
+        "code",
+        "code-oss",
+        "codium"
+      ],
+      "packages": {
+        "apt": [
+          "code-oss",
+          "code"
+        ],
+        "pacman": [
+          "code",
+          "code-oss"
+        ],
+        "apk": [],
+        "dnf": [
+          "code"
+        ],
+        "xbps": [
+          "vscode",
+          "code-oss"
+        ],
+        "zypper": [
+          "code",
+          "code-oss"
+        ]
+      }
+    },
+    {
+      "id": "geany",
+      "name": "Geany",
+      "summary": "Lightweight IDE",
+      "description": "Small GTK IDE and editor. Reliable in PRoot and lighter than VS Code on phones.",
+      "category": "development",
+      "binaries": [
+        "geany"
+      ],
+      "packages": {
+        "apt": [
+          "geany"
+        ],
+        "pacman": [
+          "geany"
+        ],
+        "apk": [
+          "geany"
+        ],
+        "dnf": [
+          "geany"
+        ],
+        "xbps": [
+          "geany"
+        ],
+        "zypper": [
+          "geany"
+        ]
+      }
+    },
+    {
+      "id": "neovim",
+      "name": "Neovim",
+      "summary": "Terminal editor",
+      "description": "Neovim (nvim). Use it from Terminal or a desktop terminal emulator.",
+      "category": "development",
+      "binaries": [
+        "nvim",
+        "neovim"
+      ],
+      "packages": {
+        "apt": [
+          "neovim"
+        ],
+        "pacman": [
+          "neovim"
+        ],
+        "apk": [
+          "neovim"
+        ],
+        "dnf": [
+          "neovim"
+        ],
+        "xbps": [
+          "neovim"
+        ],
+        "zypper": [
+          "neovim"
+        ]
+      }
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "summary": "Python 3 + pip",
+      "description": "Python 3 interpreter. pip is included when the distro ships python3-pip / py3-pip.",
+      "category": "development",
+      "install_all_packages": true,
+      "binaries": [
+        "python3",
+        "python"
+      ],
+      "packages": {
+        "apt": [
+          "python3",
+          "python3-pip"
+        ],
+        "pacman": [
+          "python",
+          "python-pip"
+        ],
+        "apk": [
+          "python3",
+          "py3-pip"
+        ],
+        "dnf": [
+          "python3",
+          "python3-pip"
+        ],
+        "xbps": [
+          "python3",
+          "python3-pip"
+        ],
+        "zypper": [
+          "python3",
+          "python3-pip"
+        ]
+      }
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "summary": "Version control",
+      "description": "Git command-line tools for cloning and committing inside the environment.",
+      "category": "development",
+      "binaries": [
+        "git"
+      ],
+      "packages": {
+        "apt": [
+          "git"
+        ],
+        "pacman": [
+          "git"
+        ],
+        "apk": [
+          "git"
+        ],
+        "dnf": [
+          "git"
+        ],
+        "xbps": [
+          "git"
+        ],
+        "zypper": [
+          "git"
+        ]
+      }
+    },
+    {
+      "id": "gimp",
+      "name": "GIMP",
+      "summary": "Photo editor",
+      "description": "GNU Image Manipulation Program. Open it from the desktop menu. Large download.",
+      "category": "graphics",
+      "large_download": true,
+      "binaries": [
+        "gimp"
+      ],
+      "packages": {
+        "apt": [
+          "gimp"
+        ],
+        "pacman": [
+          "gimp"
+        ],
+        "apk": [
+          "gimp"
+        ],
+        "dnf": [
+          "gimp"
+        ],
+        "xbps": [
+          "gimp"
+        ],
+        "zypper": [
+          "gimp"
+        ]
+      }
+    },
+    {
+      "id": "inkscape",
+      "name": "Inkscape",
+      "summary": "Vector graphics",
+      "description": "SVG editor. Works in the desktop session. Large download.",
+      "category": "graphics",
+      "large_download": true,
+      "binaries": [
+        "inkscape"
+      ],
+      "packages": {
+        "apt": [
+          "inkscape"
+        ],
+        "pacman": [
+          "inkscape"
+        ],
+        "apk": [
+          "inkscape"
+        ],
+        "dnf": [
+          "inkscape"
+        ],
+        "xbps": [
+          "inkscape"
+        ],
+        "zypper": [
+          "inkscape"
+        ]
+      }
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "summary": "Media player",
+      "description": "VLC media player. Hardware video decode is limited in PRoot; software decode still plays most files.",
+      "category": "multimedia",
+      "large_download": true,
+      "binaries": [
+        "vlc"
+      ],
+      "packages": {
+        "apt": [
+          "vlc"
+        ],
+        "pacman": [
+          "vlc"
+        ],
+        "apk": [
+          "vlc"
+        ],
+        "dnf": [
+          "vlc"
+        ],
+        "xbps": [
+          "vlc"
+        ],
+        "zypper": [
+          "vlc"
+        ]
+      }
+    },
+    {
+      "id": "mpv",
+      "name": "MPV",
+      "summary": "Video player",
+      "description": "mpv, a lightweight player. Good default when VLC feels heavy.",
+      "category": "multimedia",
+      "binaries": [
+        "mpv"
+      ],
+      "packages": {
+        "apt": [
+          "mpv"
+        ],
+        "pacman": [
+          "mpv"
+        ],
+        "apk": [
+          "mpv"
+        ],
+        "dnf": [
+          "mpv"
+        ],
+        "xbps": [
+          "mpv"
+        ],
+        "zypper": [
+          "mpv"
+        ]
+      }
+    },
+    {
+      "id": "libreoffice",
+      "name": "LibreOffice",
+      "summary": "Office suite",
+      "description": "Writer, Calc, Impress. This is a large install and can take several minutes on a phone.",
+      "category": "office",
+      "large_download": true,
+      "needs_sandbox_wrapper": true,
+      "install_all_packages": true,
+      "binaries": [
+        "libreoffice",
+        "soffice"
+      ],
+      "packages": {
+        "apt": [
+          "libreoffice",
+          "uno-libs-private"
+        ],
+        "pacman": [
+          "libreoffice-fresh",
+          "libreoffice-still"
+        ],
+        "apk": [
+          "libreoffice"
+        ]
+      }
+    }
+  ]
+}
