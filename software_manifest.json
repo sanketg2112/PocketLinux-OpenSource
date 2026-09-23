@@ -9,7 +9,7 @@
       "id": "update-distro",
       "name": "Update Distro",
       "summary": "Update package repositories & system packages",
-      "description": "One-click system update for your Linux environment. Refreshes repositories and upgrades all installed packages across Alpine (apk), Debian/Ubuntu/Kali (apt), Arch (pacman), Fedora (dnf), Void (xbps), and openSUSE (zypper). Recommended to keep your environment secure and up-to-date.",
+      "description": "One-click system update for your Linux environment. Recommended to keep your environment secure and up to date.",
       "category": "development",
       "recommended": true,
       "large_download": false,
