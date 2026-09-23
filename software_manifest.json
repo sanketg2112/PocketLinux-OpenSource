@@ -6,6 +6,66 @@
   "hidden_apps": [],
   "apps": [
     {
+      "id": "update-distro",
+      "name": "Update Distro",
+      "summary": "Update package repositories & system packages",
+      "description": "One-click system update for your Linux environment. Refreshes repositories and upgrades all installed packages across Alpine (apk), Debian/Ubuntu/Kali (apt), Arch (pacman), Fedora (dnf), Void (xbps), and openSUSE (zypper). Recommended to keep your environment secure and up-to-date.",
+      "category": "development",
+      "recommended": true,
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "packages": {
+        "apk": [
+          "busybox"
+        ],
+        "apt": [
+          "coreutils"
+        ],
+        "debian": [
+          "coreutils"
+        ],
+        "ubuntu": [
+          "coreutils"
+        ],
+        "kali": [
+          "coreutils"
+        ],
+        "pacman": [
+          "coreutils"
+        ],
+        "archlinux": [
+          "coreutils"
+        ],
+        "dnf": [
+          "coreutils"
+        ],
+        "fedora": [
+          "coreutils"
+        ],
+        "xbps": [
+          "coreutils"
+        ],
+        "zypper": [
+          "coreutils"
+        ]
+      },
+      "install_scripts": {
+        "apk": "set -e\necho '==> Updating Alpine packages (apk)...'\napk update && apk upgrade\necho '==> Alpine system updated successfully!'",
+        "apt": "set -e\nexport DEBIAN_FRONTEND=noninteractive\necho '==> Updating APT repositories and packages...'\napt-get update && apt-get upgrade -y && apt-get clean\necho '==> Distro packages updated successfully!'",
+        "debian": "set -e\nexport DEBIAN_FRONTEND=noninteractive\necho '==> Updating Debian packages (apt)...'\napt-get update && apt-get upgrade -y && apt-get clean\necho '==> Debian system updated successfully!'",
+        "ubuntu": "set -e\nexport DEBIAN_FRONTEND=noninteractive\necho '==> Updating Ubuntu packages (apt)...'\napt-get update && apt-get upgrade -y && apt-get clean\necho '==> Ubuntu system updated successfully!'",
+        "kali": "set -e\nexport DEBIAN_FRONTEND=noninteractive\necho '==> Updating Kali packages (apt)...'\napt-get update && apt-get upgrade -y && apt-get clean\necho '==> Kali system updated successfully!'",
+        "pacman": "set -e\necho '==> Updating Arch packages (pacman)...'\npacman -Syu --noconfirm\necho '==> Arch Linux system updated successfully!'",
+        "archlinux": "set -e\necho '==> Updating Arch packages (pacman)...'\npacman -Syu --noconfirm\necho '==> Arch Linux system updated successfully!'",
+        "dnf": "set -e\necho '==> Updating Fedora packages (dnf)...'\ndnf upgrade -y\necho '==> Fedora system updated successfully!'",
+        "fedora": "set -e\necho '==> Updating Fedora packages (dnf)...'\ndnf upgrade -y\necho '==> Fedora system updated successfully!'",
+        "xbps": "set -e\necho '==> Updating Void Linux packages (xbps)...'\nxbps-install -Syu -y\necho '==> Void Linux system updated successfully!'",
+        "zypper": "set -e\necho '==> Updating openSUSE packages (zypper)...'\nzypper --non-interactive refresh && zypper --non-interactive update -y\necho '==> openSUSE system updated successfully!'",
+        "default": "set -e\necho '==> Detecting package manager...'\nif command -v apt-get >/dev/null 2>&1; then\n  export DEBIAN_FRONTEND=noninteractive\n  apt-get update && apt-get upgrade -y && apt-get clean\nelif command -v apk >/dev/null 2>&1; then\n  apk update && apk upgrade\nelif command -v pacman >/dev/null 2>&1; then\n  pacman -Syu --noconfirm\nelif command -v dnf >/dev/null 2>&1; then\n  dnf upgrade -y\nelif command -v xbps-install >/dev/null 2>&1; then\n  xbps-install -Syu -y\nelif command -v zypper >/dev/null 2>&1; then\n  zypper --non-interactive refresh && zypper --non-interactive update -y\nelse\n  echo 'No recognized package manager found.'\n  exit 1\nfi\necho '==> System packages updated successfully!'"
+      },
+      "updated_at": "2026-09-23T07:30:00Z"
+    },
+    {
       "id": "chromium",
       "name": "Chromium",
       "summary": "Chrome-based web browser",
