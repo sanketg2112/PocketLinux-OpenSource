@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-09-21T18:00:00Z",
+  "updated_at": "2026-10-04T15:15:22Z",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/software_manifest.json",
   "hidden_apps": [],
@@ -495,6 +495,553 @@
         ]
       },
       "updated_at": "2026-09-21T21:40:00Z"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "summary": "3D creation suite",
+      "description": "Model, sculpt, animate, and render in Blender. Open it from the desktop menu after install. This is a large download.",
+      "category": "graphics",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "blender"
+      ],
+      "packages": {
+        "apt": [
+          "blender"
+        ],
+        "pacman": [
+          "blender"
+        ],
+        "apk": [
+          "blender"
+        ],
+        "dnf": [
+          "blender"
+        ],
+        "xbps": [
+          "blender"
+        ],
+        "zypper": [
+          "blender"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/blender.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://www.blender.org/"
+    },
+    {
+      "id": "krita",
+      "name": "Krita",
+      "summary": "Digital painting",
+      "description": "Krita for illustration and painting. Open it from the desktop menu. Large download.",
+      "category": "graphics",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "krita"
+      ],
+      "packages": {
+        "apt": [
+          "krita"
+        ],
+        "pacman": [
+          "krita"
+        ],
+        "apk": [
+          "krita"
+        ],
+        "dnf": [
+          "krita"
+        ],
+        "xbps": [
+          "krita"
+        ],
+        "zypper": [
+          "krita"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/krita.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://krita.org/"
+    },
+    {
+      "id": "darktable",
+      "name": "Darktable",
+      "summary": "Photo developer",
+      "description": "Non-destructive raw photo editor. Open it from the desktop menu. Large download.",
+      "category": "graphics",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "darktable"
+      ],
+      "packages": {
+        "apt": [
+          "darktable"
+        ],
+        "pacman": [
+          "darktable"
+        ],
+        "apk": [
+          "darktable"
+        ],
+        "dnf": [
+          "darktable"
+        ],
+        "xbps": [
+          "darktable"
+        ],
+        "zypper": [
+          "darktable"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/darktable.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://www.darktable.org/"
+    },
+    {
+      "id": "audacity",
+      "name": "Audacity",
+      "summary": "Audio editor",
+      "description": "Record and edit audio. Open Audacity from the desktop menu after install.",
+      "category": "multimedia",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "audacity"
+      ],
+      "packages": {
+        "apt": [
+          "audacity"
+        ],
+        "pacman": [
+          "audacity"
+        ],
+        "apk": [
+          "audacity"
+        ],
+        "dnf": [
+          "audacity"
+        ],
+        "xbps": [
+          "audacity"
+        ],
+        "zypper": [
+          "audacity"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/audacity.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://www.audacityteam.org/"
+    },
+    {
+      "id": "kdenlive",
+      "name": "Kdenlive",
+      "summary": "Video editor",
+      "description": "Multi-track video editor. Open it from the desktop menu. Large download.",
+      "category": "multimedia",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "kdenlive"
+      ],
+      "packages": {
+        "apt": [
+          "kdenlive"
+        ],
+        "pacman": [
+          "kdenlive"
+        ],
+        "apk": [
+          "kdenlive"
+        ],
+        "dnf": [
+          "kdenlive"
+        ],
+        "xbps": [
+          "kdenlive"
+        ],
+        "zypper": [
+          "kdenlive"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/kdenlive.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://kdenlive.org/"
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "summary": "Audio and video tools",
+      "description": "Convert and inspect media from the terminal with ffmpeg and ffprobe.",
+      "category": "multimedia",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "ffmpeg",
+        "ffprobe"
+      ],
+      "packages": {
+        "apt": [
+          "ffmpeg"
+        ],
+        "pacman": [
+          "ffmpeg"
+        ],
+        "apk": [
+          "ffmpeg"
+        ],
+        "dnf": [
+          "ffmpeg"
+        ],
+        "xbps": [
+          "ffmpeg"
+        ],
+        "zypper": [
+          "ffmpeg"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/ffmpeg.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://ffmpeg.org/"
+    },
+    {
+      "id": "filezilla",
+      "name": "FileZilla",
+      "summary": "FTP and SFTP client",
+      "description": "Transfer files with FTP, FTPS, and SFTP. Open FileZilla from the desktop menu.",
+      "category": "internet",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "filezilla"
+      ],
+      "packages": {
+        "apt": [
+          "filezilla"
+        ],
+        "pacman": [
+          "filezilla"
+        ],
+        "apk": [
+          "filezilla"
+        ],
+        "dnf": [
+          "filezilla"
+        ],
+        "xbps": [
+          "filezilla"
+        ],
+        "zypper": [
+          "filezilla"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/filezilla.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://filezilla-project.org/"
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "summary": "Messaging app",
+      "description": "Telegram Desktop. Sign in after install and open it from the desktop menu. Large download.",
+      "category": "internet",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "telegram-desktop"
+      ],
+      "packages": {
+        "apt": [
+          "telegram-desktop"
+        ],
+        "pacman": [
+          "telegram-desktop"
+        ],
+        "apk": [
+          "telegram-desktop"
+        ],
+        "dnf": [
+          "telegram-desktop"
+        ],
+        "xbps": [
+          "telegram-desktop"
+        ],
+        "zypper": [
+          "telegram-desktop"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/telegram.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://desktop.telegram.org/"
+    },
+    {
+      "id": "remmina",
+      "name": "Remmina",
+      "summary": "Remote desktop",
+      "description": "Connect to other computers with RDP, VNC, and SSH. Open Remmina from the desktop menu.",
+      "category": "internet",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "remmina"
+      ],
+      "packages": {
+        "apt": [
+          "remmina"
+        ],
+        "pacman": [
+          "remmina"
+        ],
+        "apk": [
+          "remmina"
+        ],
+        "dnf": [
+          "remmina"
+        ],
+        "xbps": [
+          "remmina"
+        ],
+        "zypper": [
+          "remmina"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/remmina.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://remmina.org/"
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "summary": "JavaScript runtime",
+      "description": "Node.js and npm for the terminal. On some distros npm is included with nodejs.",
+      "category": "development",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "node",
+        "nodejs",
+        "npm"
+      ],
+      "packages": {
+        "apt": [
+          "nodejs",
+          "npm"
+        ],
+        "pacman": [
+          "nodejs",
+          "npm"
+        ],
+        "apk": [
+          "nodejs",
+          "npm"
+        ],
+        "dnf": [
+          "nodejs",
+          "npm"
+        ],
+        "xbps": [
+          "nodejs"
+        ],
+        "zypper": [
+          "nodejs",
+          "npm"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/nodejs.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "install_all_packages": true,
+      "homepage": "https://nodejs.org/"
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "summary": "Go programming language",
+      "description": "Go compiler and tools. Use go from the terminal after install.",
+      "category": "development",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "go"
+      ],
+      "packages": {
+        "apt": [
+          "golang",
+          "golang-go"
+        ],
+        "pacman": [
+          "go"
+        ],
+        "apk": [
+          "go"
+        ],
+        "dnf": [
+          "golang"
+        ],
+        "xbps": [
+          "go"
+        ],
+        "zypper": [
+          "go",
+          "golang"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/go.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://go.dev/"
+    },
+    {
+      "id": "openjdk",
+      "name": "OpenJDK",
+      "summary": "Java development kit",
+      "description": "Java runtime and javac. Use java and javac from the terminal. Large download.",
+      "category": "development",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "java",
+        "javac"
+      ],
+      "packages": {
+        "apt": [
+          "default-jdk"
+        ],
+        "pacman": [
+          "jdk-openjdk"
+        ],
+        "apk": [
+          "openjdk21",
+          "openjdk17"
+        ],
+        "dnf": [
+          "java-21-openjdk-devel",
+          "java-17-openjdk-devel"
+        ],
+        "xbps": [
+          "openjdk21",
+          "openjdk17",
+          "openjdk"
+        ],
+        "zypper": [
+          "java-21-openjdk-devel",
+          "java-17-openjdk-devel"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/openjdk.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://openjdk.org/"
+    },
+    {
+      "id": "build-tools",
+      "name": "Build Tools",
+      "summary": "GCC, G++, and Make",
+      "description": "Compilers and Make for building C and C++ projects inside the environment. Large download.",
+      "category": "development",
+      "large_download": true,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "gcc",
+        "cc"
+      ],
+      "packages": {
+        "apt": [
+          "build-essential"
+        ],
+        "pacman": [
+          "base-devel"
+        ],
+        "apk": [
+          "build-base"
+        ],
+        "dnf": [
+          "gcc",
+          "gcc-c++",
+          "make"
+        ],
+        "xbps": [
+          "base-devel"
+        ],
+        "zypper": [
+          "gcc",
+          "gcc-c++",
+          "make"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/build-tools.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "install_all_packages": true
+    },
+    {
+      "id": "htop",
+      "name": "htop",
+      "summary": "Process viewer",
+      "description": "Interactive process viewer. Run htop in the terminal.",
+      "category": "development",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "htop"
+      ],
+      "packages": {
+        "apt": [
+          "htop"
+        ],
+        "pacman": [
+          "htop"
+        ],
+        "apk": [
+          "htop"
+        ],
+        "dnf": [
+          "htop"
+        ],
+        "xbps": [
+          "htop"
+        ],
+        "zypper": [
+          "htop"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/htop.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://htop.dev/"
+    },
+    {
+      "id": "tmux",
+      "name": "tmux",
+      "summary": "Terminal multiplexer",
+      "description": "Keep terminal sessions open in panes and windows. Run tmux in the terminal.",
+      "category": "development",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "tmux"
+      ],
+      "packages": {
+        "apt": [
+          "tmux"
+        ],
+        "pacman": [
+          "tmux"
+        ],
+        "apk": [
+          "tmux"
+        ],
+        "dnf": [
+          "tmux"
+        ],
+        "xbps": [
+          "tmux"
+        ],
+        "zypper": [
+          "tmux"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/tmux.png",
+      "updated_at": "2026-10-04T15:15:22Z",
+      "homepage": "https://github.com/tmux/tmux"
     }
   ]
 }
