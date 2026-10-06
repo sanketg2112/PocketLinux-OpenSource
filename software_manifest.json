@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-04T15:37:13Z",
+  "updated_at": "2026-10-06T12:00:00Z",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/software_manifest.json",
   "hidden_apps": [],
@@ -745,41 +745,6 @@
       "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/filezilla.png",
       "updated_at": "2026-10-04T15:15:22Z",
       "homepage": "https://filezilla-project.org/"
-    },
-    {
-      "id": "telegram",
-      "name": "Telegram",
-      "summary": "Messaging app",
-      "description": "Telegram Desktop. Sign in after install and open it from the desktop menu. Large download.",
-      "category": "internet",
-      "large_download": true,
-      "needs_sandbox_wrapper": false,
-      "binaries": [
-        "telegram-desktop"
-      ],
-      "packages": {
-        "apt": [
-          "telegram-desktop"
-        ],
-        "pacman": [
-          "telegram-desktop"
-        ],
-        "apk": [
-          "telegram-desktop"
-        ],
-        "dnf": [
-          "telegram-desktop"
-        ],
-        "xbps": [
-          "telegram-desktop"
-        ],
-        "zypper": [
-          "telegram-desktop"
-        ]
-      },
-      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/telegram.png",
-      "updated_at": "2026-10-04T15:15:22Z",
-      "homepage": "https://desktop.telegram.org/"
     },
     {
       "id": "remmina",
