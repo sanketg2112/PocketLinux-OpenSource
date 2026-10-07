@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-06T12:00:00Z",
+  "updated_at": "2026-10-07T18:00:00Z",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/software_manifest.json",
   "hidden_apps": [],
@@ -499,6 +499,146 @@
         ]
       },
       "updated_at": "2026-09-21T21:40:00Z"
+    },
+    {
+      "id": "mousepad",
+      "name": "Mousepad",
+      "summary": "Simple notepad",
+      "description": "A small text editor for notes and plain text. Open Mousepad from the desktop menu after install.",
+      "category": "office",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "mousepad"
+      ],
+      "packages": {
+        "apt": [
+          "mousepad"
+        ],
+        "pacman": [
+          "mousepad"
+        ],
+        "apk": [
+          "mousepad"
+        ],
+        "dnf": [
+          "mousepad"
+        ],
+        "xbps": [
+          "mousepad"
+        ],
+        "zypper": [
+          "mousepad"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/mousepad.png",
+      "updated_at": "2026-10-07T18:00:00Z",
+      "homepage": "https://docs.xfce.org/apps/mousepad/start"
+    },
+    {
+      "id": "gnumeric",
+      "name": "Gnumeric",
+      "summary": "Spreadsheet",
+      "description": "A lightweight Excel-style spreadsheet for tables, formulas, and charts. Open Gnumeric from the desktop menu. Smaller than LibreOffice Calc.",
+      "category": "office",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "gnumeric"
+      ],
+      "packages": {
+        "apt": [
+          "gnumeric"
+        ],
+        "pacman": [
+          "gnumeric"
+        ],
+        "apk": [
+          "gnumeric"
+        ],
+        "dnf": [
+          "gnumeric"
+        ],
+        "xbps": [
+          "gnumeric"
+        ],
+        "zypper": [
+          "gnumeric"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/gnumeric.png",
+      "updated_at": "2026-10-07T18:00:00Z",
+      "homepage": "http://www.gnumeric.org/"
+    },
+    {
+      "id": "abiword",
+      "name": "AbiWord",
+      "summary": "Word processor",
+      "description": "A simple word processor for letters and documents. Open AbiWord from the desktop menu. Lighter than LibreOffice Writer.",
+      "category": "office",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "abiword"
+      ],
+      "packages": {
+        "apt": [
+          "abiword"
+        ],
+        "pacman": [
+          "abiword"
+        ],
+        "apk": [
+          "abiword"
+        ],
+        "dnf": [
+          "abiword"
+        ],
+        "xbps": [
+          "abiword"
+        ],
+        "zypper": [
+          "abiword"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/abiword.png",
+      "updated_at": "2026-10-07T18:00:00Z",
+      "homepage": "https://www.abisource.com/"
+    },
+    {
+      "id": "evince",
+      "name": "Evince",
+      "summary": "PDF and document viewer",
+      "description": "Open PDFs and other documents. Launch Evince from the desktop menu after install.",
+      "category": "office",
+      "large_download": false,
+      "needs_sandbox_wrapper": false,
+      "binaries": [
+        "evince"
+      ],
+      "packages": {
+        "apt": [
+          "evince"
+        ],
+        "pacman": [
+          "evince"
+        ],
+        "apk": [
+          "evince"
+        ],
+        "dnf": [
+          "evince"
+        ],
+        "xbps": [
+          "evince"
+        ],
+        "zypper": [
+          "evince"
+        ]
+      },
+      "icon_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/icons/evince.png",
+      "updated_at": "2026-10-07T18:00:00Z",
+      "homepage": "https://wiki.gnome.org/Apps/Evince"
     },
     {
       "id": "blender",
