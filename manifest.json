@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-09-22T02:22:02Z",
+  "updated_at": "2026-10-22T04:40:09Z",
   "latest": "v1.0.0",
   "repo": "sanketg2112/PocketLinux-OpenSource",
   "manifest_url": "https://raw.githubusercontent.com/sanketg2112/PocketLinux-OpenSource/main/manifest.json",
@@ -30,6 +30,31 @@
       "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.2/pocketlinux-debian-xfce-aarch64-v1.0.2.plbk",
       "encrypted_sha256": "2e9b37898c1c68529a5fc0ba4518b7351010689eb53b62a2b5bccd2492183654",
       "encrypted_size_bytes": 787752689
+    },
+    {
+      "id": "default",
+      "version": "1.0.1",
+      "tag": "v1.0.1",
+      "filename": "pocketlinux-kali-xfce-aarch64-v1.0.1.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-kali-xfce-aarch64-v1.0.1.tar.gz",
+      "sha256": "df0c784f42b4b4775edd6cf39e48ee115cd929aa1dc1455ea58a9bede0d631cc",
+      "size_bytes": 949068973,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "xfce",
+      "notes": "Kali XFCE 1.0.1: restore the leading '/' on 276 symlinks that lost it in 1.0.0 (awk, editor and other alternatives, CA certificate links, systemd units). awk works again, and the desktop drops to the selected user.",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
+      "created_at": "2026-10-22T04:40:09Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-xfce-aarch64-v1.0.1.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-kali-xfce-aarch64-v1.0.1.plbk",
+        "sha256": "1a308a68389d5ae497e79fd1e9b1fb86b228a9b9843eaeaf59882d48db2664f3",
+        "size_bytes": 949097990
+      },
+      "encrypted_filename": "pocketlinux-kali-xfce-aarch64-v1.0.1.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-kali-xfce-aarch64-v1.0.1.plbk",
+      "encrypted_sha256": "1a308a68389d5ae497e79fd1e9b1fb86b228a9b9843eaeaf59882d48db2664f3",
+      "encrypted_size_bytes": 949097990
     },
     {
       "id": "default",
