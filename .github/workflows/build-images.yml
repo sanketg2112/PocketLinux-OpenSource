@@ -213,9 +213,11 @@ jobs:
         with:
           pattern: image-*
           path: artifacts
-      - name: Update staging-manifest.json
+      # Runs for other desktops stage at the same time, so recompute on the latest
+      # main and retry instead of rebasing a conflicting staging-manifest.json.
+      - name: Update and commit staging-manifest.json
         run: |
-          python3 - << 'EOF'
+          cat > "$RUNNER_TEMP/stage.py" << 'EOF'
           import glob, json, os
           manifest = json.load(open("manifest.json"))
           staging = json.load(open("staging-manifest.json")) if os.path.exists("staging-manifest.json") else {}
@@ -240,12 +242,17 @@ jobs:
           open("staging-manifest.json", "a").write("\n")
           print("staged:", [a["filename"] for a in added])
           EOF
-      - name: Commit
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add staging-manifest.json
-          if git diff --cached --quiet; then echo "staging unchanged"; exit 0; fi
-          git commit -m "Stage container images from run ${GITHUB_RUN_ID}"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            python3 "$RUNNER_TEMP/stage.py"
+            git add staging-manifest.json
+            if git diff --cached --quiet; then echo "staging unchanged"; exit 0; fi
+            git commit -q -m "Stage container images from run ${GITHUB_RUN_ID}"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            echo "push rejected (attempt $attempt), retrying on the latest ${GITHUB_REF_NAME}"
+            sleep $((attempt * 5))
+          done
+          exit 1
