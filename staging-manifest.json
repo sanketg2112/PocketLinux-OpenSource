@@ -10,6 +10,141 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-artix-lxqt-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-lxqt-aarch64-v1.0.0.tar.gz",
+      "sha256": "f95a9a3d89881c73e31a9c0d0c7ecea8fc117dfdddfab8c1ffc32ae98773ca66",
+      "size_bytes": 667570496,
+      "arch": "aarch64",
+      "distro": "artix",
+      "desktop": "lxqt",
+      "notes": "Artix LXQT (automated build, 469 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T19:43:47Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-lxqt-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-lxqt-aarch64-v1.0.0.plbk",
+        "sha256": "6c21d7d0266b1ce957534ca4241056dfa996a48af18edcf32ed0dc09d199e38b",
+        "size_bytes": 667590905
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012793791",
+        "packages": 469,
+        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-lxqt-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-lxqt-aarch64-v1.0.0.tar.gz",
+      "sha256": "41e5ce79267135ab8733ee4f626ff12de544c34d3371757abd9df15478c3a97e",
+      "size_bytes": 500779826,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "lxqt",
+      "notes": "Debian LXQT (automated build, 560 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T19:41:14Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-lxqt-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-lxqt-aarch64-v1.0.0.plbk",
+        "sha256": "088c24ed7412b31588907fd427c61250146804584f2bad929ae7e550a66e64bc",
+        "size_bytes": 500795147
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012793791",
+        "packages": 560,
+        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-fedora-lxqt-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-lxqt-aarch64-v1.0.0.tar.gz",
+      "sha256": "6e36b4d5f1d71def3e8adf171ae6d4170148c75caec3d2fc927d150f9da2dfee",
+      "size_bytes": 330637251,
+      "arch": "aarch64",
+      "distro": "fedora",
+      "desktop": "lxqt",
+      "notes": "Fedora LXQT (automated build, 534 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T19:41:07Z",
+      "encrypted": {
+        "filename": "pocketlinux-fedora-lxqt-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-lxqt-aarch64-v1.0.0.plbk",
+        "sha256": "3cf26b9d8cf785cd4ffdf7134c1a94b1ef14e579f5802041621a8d6f225eb5aa",
+        "size_bytes": 330647388
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012793791",
+        "packages": 534,
+        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-opensuse-lxqt-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-lxqt-aarch64-v1.0.0.tar.gz",
+      "sha256": "69b9ae30ebd211f3e642a385907ae0caffbd73b26c5e5b80e57ec5e112bc1764",
+      "size_bytes": 299641816,
+      "arch": "aarch64",
+      "distro": "opensuse",
+      "desktop": "lxqt",
+      "notes": "Opensuse LXQT (automated build, 503 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T19:41:28Z",
+      "encrypted": {
+        "filename": "pocketlinux-opensuse-lxqt-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-lxqt-aarch64-v1.0.0.plbk",
+        "sha256": "b21765744674c3860a40e18ada2df8d9ab6466f8218046bfb16f2581fddc0bbb",
+        "size_bytes": 299650993
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012793791",
+        "packages": 503,
+        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-void-lxqt-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-lxqt-aarch64-v1.0.0.tar.gz",
+      "sha256": "1eb9667272af840709cb8a55f6fbad7f7bfc9ac237e369e9651cb1161f5e8794",
+      "size_bytes": 431612872,
+      "arch": "aarch64",
+      "distro": "void",
+      "desktop": "lxqt",
+      "notes": "Void LXQT (automated build, 387 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T19:43:25Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-lxqt-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-lxqt-aarch64-v1.0.0.plbk",
+        "sha256": "0dc35f1b431eb921eae5efdf8cadad109595edd73eecce390db17c57cebf96d8",
+        "size_bytes": 431626081
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012793791",
+        "packages": 387,
+        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
       "sha256": "3db8ee8242193a7fc11aae51b09a7f1f3a6717735bf7808afaac4492b6517c45",
