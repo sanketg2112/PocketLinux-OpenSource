@@ -14,7 +14,7 @@ on:
       desktop:
         description: Catalog desktop id
         type: choice
-        options: [mate]
+        options: [mate, lxqt, kde]
         default: mate
       distros:
         description: Comma-separated distros (ubuntu,debian,kali,alpine,archlinux,artix,fedora,void,opensuse)
