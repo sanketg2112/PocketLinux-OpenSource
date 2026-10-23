@@ -36,8 +36,10 @@ on:
 permissions:
   contents: write
 
+# One queue per desktop. GitHub keeps only one *pending* run per group (a newer
+# one cancels it), so different desktops must not share a group.
 concurrency:
-  group: build-images
+  group: build-images-${{ inputs.desktop }}
   cancel-in-progress: false
 
 jobs:
@@ -167,9 +169,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag="v${{ matrix.version }}"
+          # Parallel matrix jobs (and runs for other desktops) can race to create the tag.
           if ! gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             gh release create "$tag" -R "$GITHUB_REPOSITORY" --title "$tag" --latest=false \
-              --notes "PocketLinux container images $tag. Images become available in the app once listed in manifest.json."
+              --notes "PocketLinux container images $tag. Images become available in the app once listed in manifest.json." \
+              || gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null
           fi
           gh release upload "$tag" "$OUT/$NAME.tar.gz" "$OUT/$NAME.plbk" -R "$GITHUB_REPOSITORY" --clobber
           touch "$OUT/uploaded"
