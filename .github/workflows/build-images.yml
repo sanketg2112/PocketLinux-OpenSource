@@ -221,7 +221,9 @@ jobs:
               d = os.path.dirname(path)
               img = json.load(open(path))
               gates = img.pop("gates", {})
-              img.pop("build", None)
+              build = img.pop("build", None) or {}
+              # Shown by the dashboard's App tab; the app and promotion ignore it.
+              img["ci"] = {k: build[k] for k in ("run_url", "packages", "recipes_commit") if k in build}
               if os.path.exists(os.path.join(d, "uploaded")) and gates.get("validate") == "pass" and gates.get("smoke") == "pass":
                   img["staging"] = True
                   added.append(img)
