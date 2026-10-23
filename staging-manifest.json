@@ -8,6 +8,28 @@
   "images": [
     {
       "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "148d715c64117c7ab605181abd5e77b320b7c08a1d077acd8d9c76e2d1607a24",
+      "size_bytes": 1015054969,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "mate",
+      "notes": "Ubuntu MATE (automated build, 552 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T16:08:31Z",
+      "encrypted": {
+        "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
+        "sha256": "ee5d6025dfcd4879152e423616f9bb023f81bb8274cb7497b4870a5b6f53ad88",
+        "size_bytes": 1015086002
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
       "version": "1.0.2",
       "tag": "v1.0.2",
       "filename": "pocketlinux-debian-xfce-aarch64-v1.0.2.tar.gz",
