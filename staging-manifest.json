@@ -8,6 +8,249 @@
   "images": [
     {
       "id": "default",
+      "version": "1.0.1",
+      "tag": "v1.0.1",
+      "filename": "pocketlinux-alpine-mate-aarch64-v1.0.1.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-alpine-mate-aarch64-v1.0.1.tar.gz",
+      "sha256": "d4853ab313f26cc9e285d1e7d48622f0d49e6d7403e3001033d9f2b4be856d87",
+      "size_bytes": 203735466,
+      "arch": "aarch64",
+      "distro": "alpine",
+      "desktop": "mate",
+      "notes": "Alpine MATE (automated build, 288 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
+      "created_at": "2026-10-23T20:33:14Z",
+      "encrypted": {
+        "filename": "pocketlinux-alpine-mate-aarch64-v1.0.1.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-alpine-mate-aarch64-v1.0.1.plbk",
+        "sha256": "07b4c17773647477db94278be7f78bd816d4316a7184470cca9d5f8b6da807ff",
+        "size_bytes": 203741731
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 288,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "7da9b93060d9fb6007f8e2e8b94dd562585acf1e55a5316205726da1b4896a22",
+      "size_bytes": 733182034,
+      "arch": "aarch64",
+      "distro": "archlinux",
+      "desktop": "mate",
+      "notes": "Archlinux MATE (automated build, 388 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:39:59Z",
+      "encrypted": {
+        "filename": "pocketlinux-archlinux-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-mate-aarch64-v1.0.0.plbk",
+        "sha256": "bb9217a2d7479c16dde19791a0abee7cf56cc7bb8351f3163b9da8224c25dfeb",
+        "size_bytes": 733204459
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 388,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-artix-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "e41e3dbdedc18746bec2be94b1bc9fc0ce8ffd0d9ba920dbd3b4bbd9bf1747fa",
+      "size_bytes": 978202255,
+      "arch": "aarch64",
+      "distro": "artix",
+      "desktop": "mate",
+      "notes": "Artix MATE (automated build, 540 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:38:27Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-mate-aarch64-v1.0.0.plbk",
+        "sha256": "dc933a198385b3136a08e9274855d2993733185b3552c56fc1fec97cb2b2d6e3",
+        "size_bytes": 978232136
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 540,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.1",
+      "tag": "v1.0.1",
+      "filename": "pocketlinux-debian-mate-aarch64-v1.0.1.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-mate-aarch64-v1.0.1.tar.gz",
+      "sha256": "f0773a786e1e629beb1a0df5a877a71cefb0044ead07950b08ede164bac0e208",
+      "size_bytes": 537683079,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "mate",
+      "notes": "Debian MATE (automated build, 621 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
+      "created_at": "2026-10-23T20:34:41Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-mate-aarch64-v1.0.1.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-mate-aarch64-v1.0.1.plbk",
+        "sha256": "be8b7c479b6d519c36c2a26812662d2c98d1a464d3f0fbaad0fa9b900b20f288",
+        "size_bytes": 537699520
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 621,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-fedora-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "dd0a0838618a2d63dcdfea77ceb64d86ffbe78afbcdcb36a52238b2815f03672",
+      "size_bytes": 459278426,
+      "arch": "aarch64",
+      "distro": "fedora",
+      "desktop": "mate",
+      "notes": "Fedora MATE (automated build, 587 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:34:25Z",
+      "encrypted": {
+        "filename": "pocketlinux-fedora-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-mate-aarch64-v1.0.0.plbk",
+        "sha256": "711b9e9f8fe76e856f823ea44b4a382d42fdb16e4c177ad5aecc7fc015539681",
+        "size_bytes": 459292499
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 587,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-kali-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "7fee9f58ec7444eff29fef17d9e656da01e1c577dbe3debbee2a780bff975dd9",
+      "size_bytes": 729822181,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "mate",
+      "notes": "Kali MATE (automated build, 740 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:35:34Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-mate-aarch64-v1.0.0.plbk",
+        "sha256": "113baecc03909a3ad2a3605645b42b72426cda4b31420228748a33a7a959f3df",
+        "size_bytes": 729844510
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 740,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-opensuse-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "f9fd3fa317b7ea0acb6973837db1a73c6e7b778820d78d8730c12dd2af21fae3",
+      "size_bytes": 416589502,
+      "arch": "aarch64",
+      "distro": "opensuse",
+      "desktop": "mate",
+      "notes": "Opensuse MATE (automated build, 539 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:34:18Z",
+      "encrypted": {
+        "filename": "pocketlinux-opensuse-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-mate-aarch64-v1.0.0.plbk",
+        "sha256": "1dc1e4c0865b1b2a33c47935c071ddd79cf5b2a641a658aff723c82df4995559",
+        "size_bytes": 416602263
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 539,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "535dfeff4e8e2cc5b2ba9da9398aa0ba3454fef64f677757b956144b1029b973",
+      "size_bytes": 542467672,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "mate",
+      "notes": "Ubuntu MATE (automated build, 563 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:36:00Z",
+      "encrypted": {
+        "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
+        "sha256": "f6497daf662b80b80b62c7dcc33ddff39b1eb7c855fbe51275e0219263c17a0a",
+        "size_bytes": 542484273
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 563,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-void-mate-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-mate-aarch64-v1.0.0.tar.gz",
+      "sha256": "eb1c93704f7c3d092b9991825bbc281506563ac61662cd3a74c788de8f20d437",
+      "size_bytes": 606465933,
+      "arch": "aarch64",
+      "distro": "void",
+      "desktop": "mate",
+      "notes": "Void MATE (automated build, 453 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-23T20:36:59Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-mate-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-mate-aarch64-v1.0.0.plbk",
+        "sha256": "8381dea1452921955219a619b50361642b161d07511e1c560792c10974e5a248",
+        "size_bytes": 606484486
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
+        "packages": 453,
+        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
@@ -435,244 +678,6 @@
         "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019614804",
         "packages": 387,
         "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-void-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "4cd050a79639335ad04ca3f3ef3cf51a6382ee50641b1fb8007ae72e1055e13e",
-      "size_bytes": 606467718,
-      "arch": "aarch64",
-      "distro": "void",
-      "desktop": "mate",
-      "notes": "Void MATE (automated build, 453 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:53:54Z",
-      "encrypted": {
-        "filename": "pocketlinux-void-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-mate-aarch64-v1.0.0.plbk",
-        "sha256": "50805def84493e6393d3e217db190d4c569cfacb7a8a5c3ddc1eaaef5f606ff7",
-        "size_bytes": 606486271
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40014142517",
-        "packages": 453,
-        "recipes_commit": "870e24dc1c00e87e5101fa517a84d0ac62f38cd2"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.1",
-      "tag": "v1.0.1",
-      "filename": "pocketlinux-alpine-mate-aarch64-v1.0.1.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-alpine-mate-aarch64-v1.0.1.tar.gz",
-      "sha256": "bb67a1123547a6844a442ad10f44877e523a3497c7a79554b7a04d98736f7372",
-      "size_bytes": 203735864,
-      "arch": "aarch64",
-      "distro": "alpine",
-      "desktop": "mate",
-      "notes": "Alpine MATE (automated build, 288 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
-      "created_at": "2026-10-23T19:40:24Z",
-      "encrypted": {
-        "filename": "pocketlinux-alpine-mate-aarch64-v1.0.1.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-alpine-mate-aarch64-v1.0.1.plbk",
-        "sha256": "30ac71d91f2dbecf54b5362c7e92d0d3ab7218fb2d03694482f5567ea5827828",
-        "size_bytes": 203742129
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012789115",
-        "packages": 288,
-        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-artix-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "b497a3e18e6e9dc85c330277c8961abdd29753cfb796408d27560b121d2c4625",
-      "size_bytes": 978201270,
-      "arch": "aarch64",
-      "distro": "artix",
-      "desktop": "mate",
-      "notes": "Artix MATE (automated build, 540 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:44:50Z",
-      "encrypted": {
-        "filename": "pocketlinux-artix-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-mate-aarch64-v1.0.0.plbk",
-        "sha256": "ca943e95ff5c0a4214e9871b0ed6e44bac3e9d03f899b40144b812b51faee414",
-        "size_bytes": 978231151
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012789115",
-        "packages": 540,
-        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-fedora-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "f190837c14efda50ac2dac6a2033fb29481eda236c83fd33c9c807955f4aabb7",
-      "size_bytes": 459277828,
-      "arch": "aarch64",
-      "distro": "fedora",
-      "desktop": "mate",
-      "notes": "Fedora MATE (automated build, 587 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:41:36Z",
-      "encrypted": {
-        "filename": "pocketlinux-fedora-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-mate-aarch64-v1.0.0.plbk",
-        "sha256": "c99e08d5daf9d735f82d74012427feb8bb2ca9e0bb513d785214bda7b454a6d0",
-        "size_bytes": 459291901
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012789115",
-        "packages": 587,
-        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-kali-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "3698d515f7806fde3dfbc1e7e8857f7cebf669dfe3fd477e23a2826eb1cdec7b",
-      "size_bytes": 729820808,
-      "arch": "aarch64",
-      "distro": "kali",
-      "desktop": "mate",
-      "notes": "Kali MATE (automated build, 740 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:43:01Z",
-      "encrypted": {
-        "filename": "pocketlinux-kali-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-mate-aarch64-v1.0.0.plbk",
-        "sha256": "82e1319f38d247ff18b40b5136bf38d593553d256073ea65b4295fbf9e3e7aa3",
-        "size_bytes": 729843137
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40012789115",
-        "packages": 740,
-        "recipes_commit": "fa567c3fb51a98df5f01940c3f99976dcc4a1d18"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "3db8ee8242193a7fc11aae51b09a7f1f3a6717735bf7808afaac4492b6517c45",
-      "size_bytes": 733180928,
-      "arch": "aarch64",
-      "distro": "archlinux",
-      "desktop": "mate",
-      "notes": "Archlinux MATE (automated build, 388 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:33:57Z",
-      "encrypted": {
-        "filename": "pocketlinux-archlinux-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-mate-aarch64-v1.0.0.plbk",
-        "sha256": "0c1e967d290eb9800ffa030e1b046855a2b1533e285df765056de6562d37f5ff",
-        "size_bytes": 733203353
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40011491133",
-        "packages": 388,
-        "recipes_commit": "3cb816e6f1d2fb906506bd2ac63539f6efa20685"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-opensuse-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "de4f561c79422415de42d16c19cb6b14abe8297e6726b7b55e3775f18a753794",
-      "size_bytes": 416589164,
-      "arch": "aarch64",
-      "distro": "opensuse",
-      "desktop": "mate",
-      "notes": "Opensuse MATE (automated build, 539 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T19:31:33Z",
-      "encrypted": {
-        "filename": "pocketlinux-opensuse-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-mate-aarch64-v1.0.0.plbk",
-        "sha256": "6bca8ae7fde8e947e416a33d21a93e65d1d0e4c0d9f9fe133c2b9e84dffac50d",
-        "size_bytes": 416601925
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40011491133",
-        "packages": 539,
-        "recipes_commit": "3cb816e6f1d2fb906506bd2ac63539f6efa20685"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.1",
-      "tag": "v1.0.1",
-      "filename": "pocketlinux-debian-mate-aarch64-v1.0.1.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-mate-aarch64-v1.0.1.tar.gz",
-      "sha256": "6845f9392ddfdd7339e2ad035fbb8513b3730d8792f73d53f103fff1ab1f60fd",
-      "size_bytes": 537682393,
-      "arch": "aarch64",
-      "distro": "debian",
-      "desktop": "mate",
-      "notes": "Debian MATE (automated build, 621 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
-      "created_at": "2026-10-23T19:21:41Z",
-      "encrypted": {
-        "filename": "pocketlinux-debian-mate-aarch64-v1.0.1.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-mate-aarch64-v1.0.1.plbk",
-        "sha256": "2f24b06aa01cea9c4c4fc11f5a43fdd61fe48e056bce81dc67eccbd9ce2c0fa7",
-        "size_bytes": 537698834
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40010123432",
-        "packages": 621,
-        "recipes_commit": "fb652e7bfccbe9042ca2fa00be6953ce4dc970e2"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.tar.gz",
-      "sha256": "5e10a16e250abc9888b160fd6bc3cedd9b96d6947a052ba92ffe8d3511d251eb",
-      "size_bytes": 542470060,
-      "arch": "aarch64",
-      "distro": "ubuntu",
-      "desktop": "mate",
-      "notes": "Ubuntu MATE (automated build, 563 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T18:41:10Z",
-      "encrypted": {
-        "filename": "pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-mate-aarch64-v1.0.0.plbk",
-        "sha256": "7f8104a47705f572223a2dbf2b38bc859a6b84501d8794d2a1302f9edfd421a3",
-        "size_bytes": 542486661
       },
       "staging": true
     },
