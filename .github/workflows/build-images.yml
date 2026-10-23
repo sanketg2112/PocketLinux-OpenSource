@@ -99,19 +99,24 @@ jobs:
       NAME: pocketlinux-${{ matrix.distro }}-${{ matrix.desktop }}-aarch64-v${{ matrix.version }}
       OUT: ${{ github.workspace }}/out
     steps:
+      # Plain sparse fetch instead of actions/checkout: the private repo has a
+      # gitlink without .gitmodules (scratch/toybox_src) that checkout chokes on.
       - name: Checkout recipes (private)
-        uses: actions/checkout@v4
-        with:
-          repository: sanketg2112/LinuxMobile
-          ref: ${{ inputs.recipes_ref }}
-          ssh-key: ${{ secrets.RECIPES_DEPLOY_KEY }}
-          path: recipes
-          persist-credentials: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /imagebuilder/
-            /app/src/debug/assets/install_desktop_x11_*.sh
-            /tools/DistroCryptoTool.java
+        env:
+          RECIPES_DEPLOY_KEY: ${{ secrets.RECIPES_DEPLOY_KEY }}
+          RECIPES_REF: ${{ inputs.recipes_ref }}
+        run: |
+          key="$RUNNER_TEMP/recipes_key"
+          printf '%s\n' "$RECIPES_DEPLOY_KEY" > "$key"
+          chmod 600 "$key"
+          export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          git init -q recipes
+          git -C recipes remote add origin git@github.com:sanketg2112/LinuxMobile.git
+          git -C recipes sparse-checkout set --no-cone /imagebuilder/ '/app/src/debug/assets/install_desktop_x11_*.sh' /tools/DistroCryptoTool.java
+          git -C recipes fetch -q --depth 1 --filter=blob:none origin "$RECIPES_REF"
+          git -C recipes checkout -q FETCH_HEAD
+          rm -f "$key"
+          ls recipes recipes/imagebuilder
 
       - name: Host tools
         run: |
