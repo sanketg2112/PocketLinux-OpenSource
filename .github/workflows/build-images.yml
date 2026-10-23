@@ -1,0 +1,240 @@
+name: Build container images
+
+# Builds PocketLinux catalog images (distro + desktop) on native arm64 runners,
+# gates them (static validator + headless desktop smoke test), uploads passing
+# images to the v<version> release and lists them in staging-manifest.json.
+# manifest.json (what users get) is only changed by promote_images.py.
+#
+# Recipes live in the private LinuxMobile repo (imagebuilder/ + desktop installers)
+# and are fetched with the RECIPES_DEPLOY_KEY read-only deploy key.
+
+on:
+  workflow_dispatch:
+    inputs:
+      desktop:
+        description: Catalog desktop id
+        type: choice
+        options: [mate]
+        default: mate
+      distros:
+        description: Comma-separated distros (ubuntu,debian,kali,alpine,archlinux,artix,fedora,void,opensuse)
+        type: string
+        default: ubuntu
+      version:
+        description: Force a version (default = next patch per distro/desktop, 1.0.0 if new)
+        type: string
+        default: ""
+      recipes_ref:
+        description: LinuxMobile branch, tag or commit with imagebuilder/
+        type: string
+        default: main
+      publish:
+        description: Upload passing images to the release and stage them
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-images
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          DESKTOP: ${{ inputs.desktop }}
+          DISTROS: ${{ inputs.distros }}
+          FORCE_VERSION: ${{ inputs.version }}
+        run: |
+          python3 - << 'EOF' >> "$GITHUB_OUTPUT"
+          import json, os, re, sys
+          manifest = json.load(open("manifest.json"))
+          desktop = os.environ["DESKTOP"]
+          known = ["ubuntu", "debian", "kali", "alpine", "archlinux", "artix", "fedora", "void", "opensuse"]
+          distros = known if os.environ["DISTROS"].strip() == "all" else [d.strip() for d in os.environ["DISTROS"].split(",") if d.strip()]
+          bad = [d for d in distros if d not in known]
+          if bad:
+              sys.exit(f"unknown distros: {bad}")
+          def ver(v):
+              return tuple(int(x) for x in re.findall(r"\d+", v or "0")[:3])
+          published = {i.get("filename") for i in manifest.get("images", [])}
+          matrix = []
+          for d in distros:
+              force = os.environ["FORCE_VERSION"].lstrip("vV").strip()
+              if force:
+                  version = force
+              else:
+                  have = [ver(i.get("version")) for i in manifest.get("images", [])
+                          if i.get("distro") == d and i.get("desktop") == desktop]
+                  if have:
+                      top = max(have)
+                      version = f"{top[0]}.{top[1]}.{top[2] + 1}"
+                  else:
+                      version = "1.0.0"
+              filename = f"pocketlinux-{d}-{desktop}-aarch64-v{version}.tar.gz"
+              if filename in published:
+                  sys.exit(f"{filename} is already in manifest.json; published assets are immutable")
+              matrix.append({"distro": d, "desktop": desktop, "version": version})
+          print("matrix=" + json.dumps(matrix))
+          print(json.dumps(matrix, indent=1), file=sys.stderr)
+          EOF
+
+  build:
+    needs: plan
+    name: ${{ matrix.distro }}/${{ matrix.desktop }} v${{ matrix.version }}
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    env:
+      NAME: pocketlinux-${{ matrix.distro }}-${{ matrix.desktop }}-aarch64-v${{ matrix.version }}
+      OUT: ${{ github.workspace }}/out
+    steps:
+      - name: Checkout recipes (private)
+        uses: actions/checkout@v4
+        with:
+          repository: sanketg2112/LinuxMobile
+          ref: ${{ inputs.recipes_ref }}
+          ssh-key: ${{ secrets.RECIPES_DEPLOY_KEY }}
+          path: recipes
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /imagebuilder/
+            /app/src/debug/assets/install_desktop_x11_*.sh
+            /tools/DistroCryptoTool.java
+
+      - name: Host tools
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends pigz xvfb xdotool imagemagick x11-utils libtalloc-dev
+          echo "RECIPES_COMMIT=$(git -C recipes rev-parse HEAD)" >> "$GITHUB_ENV"
+          df -h / "$GITHUB_WORKSPACE"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cache proot
+        uses: actions/cache@v4
+        with:
+          path: ~/proot
+          key: termux-proot-${{ runner.arch }}-${{ hashFiles('recipes/imagebuilder/smoke/build_proot.sh') }}
+
+      - name: Build proot (Termux flavour)
+        run: recipes/imagebuilder/smoke/build_proot.sh ~/proot
+
+      - name: Build image
+        run: |
+          sudo -E env "PATH=$PATH" recipes/imagebuilder/build.sh \
+            --distro "${{ matrix.distro }}" --desktop "${{ matrix.desktop }}" --version "${{ matrix.version }}" \
+            --out "$OUT" --work "$GITHUB_WORKSPACE/work"
+          sudo rm -rf "$GITHUB_WORKSPACE/work"
+          sudo chown -R "$(id -u):$(id -g)" "$OUT"
+          df -h /
+
+      - name: Validate
+        run: |
+          python3 -I recipes/imagebuilder/validate_image.py "$OUT/$NAME.tar.gz" \
+            --distro "${{ matrix.distro }}" --desktop "${{ matrix.desktop }}" --json "$OUT/validate.json"
+
+      - name: Smoke test (proot + Xvfb)
+        run: |
+          recipes/imagebuilder/smoke/run_smoke.sh "$OUT/$NAME.tar.gz" \
+            --desktop "${{ matrix.desktop }}" --out "$OUT/smoke" --proot ~/proot/proot
+
+      - name: Encrypt (.plbk)
+        run: recipes/imagebuilder/encrypt.sh "$OUT/$NAME.tar.gz" "$OUT/$NAME.plbk"
+
+      - name: Upload to release v${{ matrix.version }}
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v${{ matrix.version }}"
+          if ! gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$tag" -R "$GITHUB_REPOSITORY" --title "$tag" --latest=false \
+              --notes "PocketLinux container images $tag. Images become available in the app once listed in manifest.json."
+          fi
+          gh release upload "$tag" "$OUT/$NAME.tar.gz" "$OUT/$NAME.plbk" -R "$GITHUB_REPOSITORY" --clobber
+          touch "$OUT/uploaded"
+
+      - name: Report
+        if: always()
+        run: |
+          [ -f "$OUT/build-info.json" ] || { echo "No image built." >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          plbk=(); [ -f "$OUT/$NAME.plbk" ] && plbk=(--plbk "$OUT/$NAME.plbk")
+          python3 -I recipes/imagebuilder/make_meta.py --out-dir "$OUT" --repo "$GITHUB_REPOSITORY" "${plbk[@]}" \
+            --validate "$OUT/validate.json" --smoke "$OUT/smoke/smoke-report.json" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          cat "$OUT/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-${{ matrix.distro }}-${{ matrix.desktop }}
+          if-no-files-found: ignore
+          retention-days: 30
+          path: |
+            out/*.json
+            out/*.md
+            out/*.txt
+            out/*.log
+            out/uploaded
+            out/smoke/
+
+  stage:
+    needs: build
+    if: always() && inputs.publish
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: image-*
+          path: artifacts
+      - name: Update staging-manifest.json
+        run: |
+          python3 - << 'EOF'
+          import glob, json, os
+          manifest = json.load(open("manifest.json"))
+          staging = json.load(open("staging-manifest.json")) if os.path.exists("staging-manifest.json") else {}
+          prior = [i for i in staging.get("images", []) if i.get("staging")]
+          added = []
+          for path in sorted(glob.glob("artifacts/*/image.json")):
+              d = os.path.dirname(path)
+              img = json.load(open(path))
+              gates = img.pop("gates", {})
+              img.pop("build", None)
+              if os.path.exists(os.path.join(d, "uploaded")) and gates.get("validate") == "pass" and gates.get("smoke") == "pass":
+                  img["staging"] = True
+                  added.append(img)
+          keep = [i for i in prior if i["filename"] not in {a["filename"] for a in added}
+                  and i["filename"] not in {m.get("filename") for m in manifest.get("images", [])}]
+          out = dict(manifest)
+          out["images"] = added + keep + list(manifest.get("images", []))
+          out["staging_note"] = "Debug builds only: manifest.json plus unpromoted candidates (staging: true)."
+          json.dump(out, open("staging-manifest.json", "w"), indent=2)
+          open("staging-manifest.json", "a").write("\n")
+          print("staged:", [a["filename"] for a in added])
+          EOF
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add staging-manifest.json
+          if git diff --cached --quiet; then echo "staging unchanged"; exit 0; fi
+          git commit -m "Stage container images from run ${GITHUB_RUN_ID}"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
