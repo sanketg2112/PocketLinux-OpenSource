@@ -27,7 +27,7 @@ on:
       recipes_ref:
         description: LinuxMobile branch, tag or commit with imagebuilder/
         type: string
-        default: main
+        default: main2
       publish:
         description: Upload passing images to the release and stage them
         type: boolean
