@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "5dad0491d7f1ff3c1e69b9b1ffd2cc8a9e7d0589df2eed76feaea98cdb81f420",
+      "size_bytes": 696409494,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "cinnamon",
+      "notes": "Debian CINNAMON (automated build, 760 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T15:22:26Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "025a719f3c0c610ceacf9e08ef8687884ffee39abc3a4a2a8abfc918592efbf9",
+        "size_bytes": 696430799
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40529243751",
+        "packages": 760,
+        "recipes_commit": "5b58b9bc203c11670216f444bbce219423484016"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-icewm-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-icewm-aarch64-v1.0.0.tar.gz",
       "sha256": "e4dc4dcbef68240afc9b26662e098da496082ec38d7e033066840d18cdb3eec6",
