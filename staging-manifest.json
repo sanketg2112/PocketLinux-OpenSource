@@ -10,6 +10,60 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
+      "sha256": "c8f0128c3ecc869b14014d52b75ace433f9f895b8d1eb6fe17ea1310958f44af",
+      "size_bytes": 279099498,
+      "arch": "aarch64",
+      "distro": "alpine",
+      "desktop": "i3",
+      "notes": "Alpine I3 (automated build, 357 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T15:06:39Z",
+      "encrypted": {
+        "filename": "pocketlinux-alpine-i3-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-i3-aarch64-v1.0.0.plbk",
+        "sha256": "900e18579a2f14bc7b568a1476ff602ffdcfec96107cb770f68ae56cd227c484",
+        "size_bytes": 279108067
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40527183081",
+        "packages": 357,
+        "recipes_commit": "858e258cea15fca80d156f64f62262df6d4697f9"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
+      "sha256": "16f9e427352c63dc231a95fe527050ea8a93c5e7710484296f9bf48e4c3687df",
+      "size_bytes": 475032596,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "i3",
+      "notes": "Debian I3 (automated build, 502 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T15:08:03Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
+        "sha256": "bce0bb5caedda565e5f1eefeb9b3c0d9c64e133d9526b045de95e4a49b0e01fa",
+        "size_bytes": 475047149
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40527183081",
+        "packages": 502,
+        "recipes_commit": "858e258cea15fca80d156f64f62262df6d4697f9"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-void-lxqt-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-lxqt-aarch64-v1.0.0.tar.gz",
       "sha256": "70fd1cba5dd4cb961eb50361e95c8fccad036637c30aba9a1faf5b82a797121d",
