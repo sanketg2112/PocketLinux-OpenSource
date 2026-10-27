@@ -12,24 +12,51 @@
       "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
-      "sha256": "86f7740c34500be646b4e23f268ae8e7b299a4503f8eed134f4c51c917ad4131",
-      "size_bytes": 279158949,
+      "sha256": "f6c909ef29ea301d96dd48870ed372b273c586f277f94ea47fdbc9d274116e52",
+      "size_bytes": 279099127,
       "arch": "aarch64",
       "distro": "alpine",
       "desktop": "i3",
       "notes": "Alpine I3 (automated build, 357 packages)",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-27T17:15:12Z",
+      "created_at": "2026-10-27T17:20:56Z",
       "encrypted": {
         "filename": "pocketlinux-alpine-i3-aarch64-v1.0.0.plbk",
         "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-i3-aarch64-v1.0.0.plbk",
-        "sha256": "4a1914ecf7b6b5f38538ce34fd3dffb36ead424cf7c45fa2690f898375e9cecf",
-        "size_bytes": 279167518
+        "sha256": "cf695dbedf668f76f39ce4eb557a6a0e8d758cb2c9e7f36a3b9eac824a5bdf53",
+        "size_bytes": 279107696
       },
       "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40548254734",
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40549194947",
         "packages": 357,
-        "recipes_commit": "decd110865957d16777116dc90734259d8e7b647"
+        "recipes_commit": "296650d9c47308d9b289a01516c2b37b3c04e11a"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
+      "sha256": "5ee916ea7bb1ebf73c9288eda7c868034e7068eecd6ea2af2172820e20b265d9",
+      "size_bytes": 475040504,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "i3",
+      "notes": "Debian I3 (automated build, 502 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T17:22:51Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
+        "sha256": "29285d4e3bb858f599d82d36b88342907e44fb04a7877d8ddb0a4730c8c4d4df",
+        "size_bytes": 475055057
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40549194947",
+        "packages": 502,
+        "recipes_commit": "296650d9c47308d9b289a01516c2b37b3c04e11a"
       },
       "staging": true
     },
@@ -111,33 +138,6 @@
         "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40528596791",
         "packages": 482,
         "recipes_commit": "71162fc4c1ef54ef17c1f380e37717f54c4e0505"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.tar.gz",
-      "sha256": "16f9e427352c63dc231a95fe527050ea8a93c5e7710484296f9bf48e4c3687df",
-      "size_bytes": 475032596,
-      "arch": "aarch64",
-      "distro": "debian",
-      "desktop": "i3",
-      "notes": "Debian I3 (automated build, 502 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-27T15:08:03Z",
-      "encrypted": {
-        "filename": "pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-i3-aarch64-v1.0.0.plbk",
-        "sha256": "bce0bb5caedda565e5f1eefeb9b3c0d9c64e133d9526b045de95e4a49b0e01fa",
-        "size_bytes": 475047149
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40527183081",
-        "packages": 502,
-        "recipes_commit": "858e258cea15fca80d156f64f62262df6d4697f9"
       },
       "staging": true
     },
