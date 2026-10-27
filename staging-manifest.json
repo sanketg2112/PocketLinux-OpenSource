@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
+      "sha256": "ea3750b2c366c8a61c047644d676117e95a9f6066ea68b5af5f9c74355fd0a2b",
+      "size_bytes": 635157705,
+      "arch": "aarch64",
+      "distro": "alpine",
+      "desktop": "kde",
+      "notes": "Alpine KDE (automated build, 652 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T06:03:59Z",
+      "encrypted": {
+        "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-kde-aarch64-v1.0.0.plbk",
+        "sha256": "61127cd87e5139ddb6033e0ab119a0d4ad376101f616c87d56859f89926caca4",
+        "size_bytes": 635177122
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40458296606",
+        "packages": 652,
+        "recipes_commit": "32f293e60bcbfd29da1bd96d644135746cc5493c"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-lxqt-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-lxqt-aarch64-v1.0.0.tar.gz",
       "sha256": "dc9b381ce3a8571d183867894402ac58edfcbaef665f77df2fead87e10b3614d",
@@ -111,33 +138,6 @@
         "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40447543354",
         "packages": 1192,
         "recipes_commit": "cef172662fa924a7fefaaf48364a8c50dd9a9b9e"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
-      "sha256": "bfc04be0dcefc3e438b0b887d3250ec0fa0b08f6d3d772cbef92933be599e2d9",
-      "size_bytes": 635141436,
-      "arch": "aarch64",
-      "distro": "alpine",
-      "desktop": "kde",
-      "notes": "Alpine KDE (automated build, 652 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-27T04:01:44Z",
-      "encrypted": {
-        "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-kde-aarch64-v1.0.0.plbk",
-        "sha256": "eb58ce6318c63d0567104c547b745405bd047288176aaed53ae29fcc1d99579e",
-        "size_bytes": 635160853
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40446857134",
-        "packages": 652,
-        "recipes_commit": "1b2a8e6654e6675149ab02e97489cfde5f15d17b"
       },
       "staging": true
     },
