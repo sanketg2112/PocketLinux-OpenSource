@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-kali-kde-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-kde-aarch64-v1.0.0.tar.gz",
+      "sha256": "3eabd7220c97ae21d287cdb43ac3794ffa17a7b678f84ec533a7a3e106764205",
+      "size_bytes": 1008397085,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "kde",
+      "notes": "Kali KDE (automated build, 1192 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-27T04:15:27Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-kde-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-kde-aarch64-v1.0.0.plbk",
+        "sha256": "a4d8ae3e85d1624630be43349e3e9cc07ab4f2b859a0eb3a312bf00e8d637b66",
+        "size_bytes": 1008427894
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40447543354",
+        "packages": 1192,
+        "recipes_commit": "cef172662fa924a7fefaaf48364a8c50dd9a9b9e"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-kde-aarch64-v1.0.0.tar.gz",
       "sha256": "bfc04be0dcefc3e438b0b887d3250ec0fa0b08f6d3d772cbef92933be599e2d9",
@@ -380,33 +407,6 @@
       "ci": {
         "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019650778",
         "packages": 453,
-        "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
-      },
-      "staging": true
-    },
-    {
-      "id": "default",
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "filename": "pocketlinux-kali-kde-aarch64-v1.0.0.tar.gz",
-      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-kde-aarch64-v1.0.0.tar.gz",
-      "sha256": "2677e4ee0598c1a93bafa788a1857fe719078eda8fc09f6d9b760a2186d10e66",
-      "size_bytes": 908110371,
-      "arch": "aarch64",
-      "distro": "kali",
-      "desktop": "kde",
-      "notes": "Kali KDE (automated build, 1062 packages)",
-      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-10-23T20:41:56Z",
-      "encrypted": {
-        "filename": "pocketlinux-kali-kde-aarch64-v1.0.0.plbk",
-        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-kde-aarch64-v1.0.0.plbk",
-        "sha256": "6f86168fca7b1daa6729daecc127cf662cc4b77c6abc2fe8961b1f26438da80f",
-        "size_bytes": 908138140
-      },
-      "ci": {
-        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40019655806",
-        "packages": 1062,
         "recipes_commit": "0407f414c2496aa48c210aebc6614d35c7ab2d20"
       },
       "staging": true
