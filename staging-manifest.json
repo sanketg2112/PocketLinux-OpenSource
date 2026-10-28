@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-artix-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "55d940ed2c0e5bece0289d3efdb2c7e66bb17bb6c9d1a4569a624cb9aa104b79",
+      "size_bytes": 660009132,
+      "arch": "aarch64",
+      "distro": "artix",
+      "desktop": "openbox",
+      "notes": "Artix OPENBOX (automated build, 447 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:41:22Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "5e5c65c949214244295252998008eef52354cb1f83d7c4929f23d2542fdcde1c",
+        "size_bytes": 660029317
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40627569406",
+        "packages": 447,
+        "recipes_commit": "bd79521b6fcfdf802a19cbc9ebe728cd22a05f64"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-opensuse-i3-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-i3-aarch64-v1.0.0.tar.gz",
       "sha256": "b032abf3c09863f06a19636db5dc2c8ac267a6ad86038a443d549432170d5448",
