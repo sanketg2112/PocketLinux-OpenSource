@@ -10,6 +10,60 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-alpine-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "9c16c8a6afb1933f567b6845dcaddcd1e8cb69c3cc8cc283c3069a7d06e690f9",
+      "size_bytes": 278640111,
+      "arch": "aarch64",
+      "distro": "alpine",
+      "desktop": "openbox",
+      "notes": "Alpine OPENBOX (automated build, 342 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T02:06:58Z",
+      "encrypted": {
+        "filename": "pocketlinux-alpine-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "e16bcc041d0ccb378161d51d7b0973ce017ae654d0f68e8fb56afc4a775eba3f",
+        "size_bytes": 278648648
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40618707928",
+        "packages": 342,
+        "recipes_commit": "d3f89f76f52871fb7685b661a880a5063ca0992d"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "19dc4982b2ce47b2c942fefb2a3c46800f700db59ad90ada3c61bb3d5623e3ef",
+      "size_bytes": 474631827,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "openbox",
+      "notes": "Debian OPENBOX (automated build, 489 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T02:08:35Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "7777d269fa60db32bc98e2f9779773f77198094880b375d4466b7f64d9276b4d",
+        "size_bytes": 474646348
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40618707928",
+        "packages": 489,
+        "recipes_commit": "d3f89f76f52871fb7685b661a880a5063ca0992d"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-i3-aarch64-v1.0.0.tar.gz",
       "sha256": "f6c909ef29ea301d96dd48870ed372b273c586f277f94ea47fdbc9d274116e52",
