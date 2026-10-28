@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-opensuse-i3-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-i3-aarch64-v1.0.0.tar.gz",
+      "sha256": "b032abf3c09863f06a19636db5dc2c8ac267a6ad86038a443d549432170d5448",
+      "size_bytes": 350688680,
+      "arch": "aarch64",
+      "distro": "opensuse",
+      "desktop": "i3",
+      "notes": "Opensuse I3 (automated build, 534 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:40:20Z",
+      "encrypted": {
+        "filename": "pocketlinux-opensuse-i3-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-i3-aarch64-v1.0.0.plbk",
+        "sha256": "830070626d29f17a6b6faa03f02438b24ef0d6fcf56ef5744118945062fd5b39",
+        "size_bytes": 350699425
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40627563470",
+        "packages": 534,
+        "recipes_commit": "bd79521b6fcfdf802a19cbc9ebe728cd22a05f64"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-fedora-lxde-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-lxde-aarch64-v1.0.0.tar.gz",
       "sha256": "f6181f90f13d14adabf711c88b344a31f595b2ac2eb147884ea1ba9d60954541",
