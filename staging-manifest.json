@@ -10,6 +10,33 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-debian-lxde-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-lxde-aarch64-v1.0.0.tar.gz",
+      "sha256": "181d1b69312c1e5a333cb3198029ef1dcd481bbe4cbc09516433791f3cd69fca",
+      "size_bytes": 478567551,
+      "arch": "aarch64",
+      "distro": "debian",
+      "desktop": "lxde",
+      "notes": "Debian LXDE (automated build, 520 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T02:15:11Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-lxde-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-lxde-aarch64-v1.0.0.plbk",
+        "sha256": "dae3a0b263458ee16f1639f4ca547954a71f38633b4801dfb509370bb6beb356",
+        "size_bytes": 478582200
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40619312287",
+        "packages": 520,
+        "recipes_commit": "6260f5de6f25b231e5f716d8114fc759df0eeb14"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-alpine-openbox-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-alpine-openbox-aarch64-v1.0.0.tar.gz",
       "sha256": "4f9050778de0b7b9bcb8e5487d6b92bee98d756c2a4baa66e35003efd8cfadd9",
