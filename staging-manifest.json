@@ -10,6 +10,195 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-archlinux-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "b72a22db238a080d51a96e77f9908f68a3d1f3eebcd672f78d6b3566a788b446",
+      "size_bytes": 557191056,
+      "arch": "aarch64",
+      "distro": "archlinux",
+      "desktop": "icewm",
+      "notes": "Archlinux ICEWM (automated build, 347 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:29:35Z",
+      "encrypted": {
+        "filename": "pocketlinux-archlinux-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "2be126f00825bf32d067a977f692207370139b6a7e0c9e26faeb96ae1bc89622",
+        "size_bytes": 557208105
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 347,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-artix-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "a1c6acc66fdba68f11777ae5b2d0ac491da0e88d59494cc05945230d54ed9284",
+      "size_bytes": 660515781,
+      "arch": "aarch64",
+      "distro": "artix",
+      "desktop": "icewm",
+      "notes": "Artix ICEWM (automated build, 438 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:27:44Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "d65642eb1a87372fdc27e1cdcbceeb4eb78bae72a0dfc22f9c3806c114edbc5d",
+        "size_bytes": 660535966
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 438,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-fedora-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "139822b8d0e0e91fcd0a2237be0c8e9815b97629dac6544f8543327357d071ef",
+      "size_bytes": 351816169,
+      "arch": "aarch64",
+      "distro": "fedora",
+      "desktop": "icewm",
+      "notes": "Fedora ICEWM (automated build, 556 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:25:50Z",
+      "encrypted": {
+        "filename": "pocketlinux-fedora-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "2b80a11b2e2a4b03bf366f335eeef4e26c1779a03d8b0e47d7c5b4c05206e56d",
+        "size_bytes": 351826946
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 556,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-kali-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "151fe2bcf227882a235bfd966426083f77e4ae91a3ecd737f1fc3fe5d88430cf",
+      "size_bytes": 675556245,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "icewm",
+      "notes": "Kali ICEWM (automated build, 630 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:26:54Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "1b3b1c234fd6fdbb35c4a7481d9882614b18255e125e78038836e22fcd895d17",
+        "size_bytes": 675576910
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 630,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-opensuse-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "7c27c59ec2b18c2cf4ba5ea225cd1e999930d446c135548db2f00d8ce4b099b4",
+      "size_bytes": 360871958,
+      "arch": "aarch64",
+      "distro": "opensuse",
+      "desktop": "icewm",
+      "notes": "Opensuse ICEWM (automated build, 550 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:26:15Z",
+      "encrypted": {
+        "filename": "pocketlinux-opensuse-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "a7c44c8903370199921d1b975e5b26c2b1e242cc830e570b79f8140549c08b65",
+        "size_bytes": 360883023
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 550,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "1bd4dffdef529eb811a53cee1087117abe4d5b8662cb217a1bc2419dca6b3935",
+      "size_bytes": 463387559,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "icewm",
+      "notes": "Ubuntu ICEWM (automated build, 443 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:26:12Z",
+      "encrypted": {
+        "filename": "pocketlinux-ubuntu-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "468e979ce5b5742019b9eccbe4c74d6678f4253c6ed3bc710f731fd22432d981",
+        "size_bytes": 463401728
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 443,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-void-icewm-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-icewm-aarch64-v1.0.0.tar.gz",
+      "sha256": "b8642c0f26a1f88e73be4832bc6d55bbb902e475ae5352d7a4c31edee8b25f44",
+      "size_bytes": 484192111,
+      "arch": "aarch64",
+      "distro": "void",
+      "desktop": "icewm",
+      "notes": "Void ICEWM (automated build, 393 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:27:41Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-icewm-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-icewm-aarch64-v1.0.0.plbk",
+        "sha256": "2d5a19995e69507e964ea304e9ea8fcc5d05c0f2229f2be6f0a62bb94e1f0a23",
+        "size_bytes": 484206920
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626227895",
+        "packages": 393,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-archlinux-i3-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-i3-aarch64-v1.0.0.tar.gz",
       "sha256": "591db8893100ecfceb56887c021b9039ca67c3048449eaab969098b06856bb8a",
