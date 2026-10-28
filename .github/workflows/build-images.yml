@@ -14,7 +14,7 @@ on:
       desktop:
         description: Catalog desktop id
         type: choice
-        options: [mate, lxqt, kde, cinnamon, icewm, i3]
+        options: [mate, lxqt, kde, cinnamon, icewm, i3, openbox, lxde]
         default: mate
       distros:
         description: Comma-separated distros (ubuntu,debian,kali,alpine,archlinux,artix,fedora,void,opensuse)
