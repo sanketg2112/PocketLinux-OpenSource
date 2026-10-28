@@ -10,6 +10,195 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-archlinux-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "28988ed6c95eae7c26d66002ae874880e9056a06e05bef563267fea46951a5df",
+      "size_bytes": 876587678,
+      "arch": "aarch64",
+      "distro": "archlinux",
+      "desktop": "cinnamon",
+      "notes": "Archlinux CINNAMON (automated build, 500 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:32:43Z",
+      "encrypted": {
+        "filename": "pocketlinux-archlinux-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "b3e8979de67e2c65858e980e7abf7de7555462fa760dbc61c84260afab4a8a02",
+        "size_bytes": 876614455
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 500,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-artix-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "3e773665fe922e12b84fec368915d753504e93d71c5f9e4ff599c793e97ee696",
+      "size_bytes": 1001000852,
+      "arch": "aarch64",
+      "distro": "artix",
+      "desktop": "cinnamon",
+      "notes": "Artix CINNAMON (automated build, 575 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:36:51Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "3832f1df0d4780bc25782540987a207a2884a3f31c841d1e0b3bed29c5f9b790",
+        "size_bytes": 1001031437
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 575,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-fedora-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "dd7b0c2c979d779e2df193c81b70f9a1d5d4360bac77620b17d3af87ba8ef788",
+      "size_bytes": 549362026,
+      "arch": "aarch64",
+      "distro": "fedora",
+      "desktop": "cinnamon",
+      "notes": "Fedora CINNAMON (automated build, 686 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:28:09Z",
+      "encrypted": {
+        "filename": "pocketlinux-fedora-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-fedora-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "39f41192112fa99bc3b3a2c936b2206c5097283ae695fbdf878fb225a673f39d",
+        "size_bytes": 549378819
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 686,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-kali-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "a48e8d2786181b2f2508809c77278da60a508cd4596565bd12f66d5a811eb389",
+      "size_bytes": 910275438,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "cinnamon",
+      "notes": "Kali CINNAMON (automated build, 874 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:28:56Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "4ee8b224acc30ab57ae302393286fde28294009005d4dd14dda9e953d429a0d7",
+        "size_bytes": 910303271
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 874,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-opensuse-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "7645be157f43cec0aa737d67e18820aee9438e75059052136da9a877f3cd6c0d",
+      "size_bytes": 451438936,
+      "arch": "aarch64",
+      "distro": "opensuse",
+      "desktop": "cinnamon",
+      "notes": "Opensuse CINNAMON (automated build, 693 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:28:01Z",
+      "encrypted": {
+        "filename": "pocketlinux-opensuse-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-opensuse-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "f0b91ad55c45f203f03c3c99a4fc96b12108b5d6247fcf13c8fec02c5d3d0750",
+        "size_bytes": 451452753
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 693,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "94908b70466ce3f2c09146c6a38410ec5d8ddb2b48c305e24c7f901dd211c2c6",
+      "size_bytes": 667974043,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "cinnamon",
+      "notes": "Ubuntu CINNAMON (automated build, 738 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:28:14Z",
+      "encrypted": {
+        "filename": "pocketlinux-ubuntu-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "4434c43157194cd83c204aee894a6a65fec1be3ade3c2e172611da7324cb85c2",
+        "size_bytes": 667994484
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 738,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-void-cinnamon-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-cinnamon-aarch64-v1.0.0.tar.gz",
+      "sha256": "920e261fb8d18670326f5efb327bddfbf3606bafdde9a7dc3e930f1b3abdd24f",
+      "size_bytes": 677947202,
+      "arch": "aarch64",
+      "distro": "void",
+      "desktop": "cinnamon",
+      "notes": "Void CINNAMON (automated build, 562 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:30:17Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-cinnamon-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-cinnamon-aarch64-v1.0.0.plbk",
+        "sha256": "137ae6f86e6269cb5dbe47d4381c1dd88ffd54dd51e2e11ac2e24cfcbd818fb2",
+        "size_bytes": 677967931
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626224791",
+        "packages": 562,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-archlinux-lxde-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-lxde-aarch64-v1.0.0.tar.gz",
       "sha256": "ffe1e322e48049dd09aa71d67a44dce55c9e3243d1411a53044fe8830628e27c",
