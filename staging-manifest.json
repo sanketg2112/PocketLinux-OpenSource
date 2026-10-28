@@ -10,6 +10,114 @@
       "id": "default",
       "version": "1.0.0",
       "tag": "v1.0.0",
+      "filename": "pocketlinux-archlinux-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "1d8f52e74fde9cc225dfbda752475d4c494698b2964183f0438529612a26d2a2",
+      "size_bytes": 583070362,
+      "arch": "aarch64",
+      "distro": "archlinux",
+      "desktop": "openbox",
+      "notes": "Archlinux OPENBOX (automated build, 352 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:34:27Z",
+      "encrypted": {
+        "filename": "pocketlinux-archlinux-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "0ec93738cb2f8e6c0608e428a9d68721d3d4e6e493c0953b5af729b9d0450d6a",
+        "size_bytes": 583088211
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626234318",
+        "packages": 352,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-kali-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "d56eac91109d664da2b6e66a7f42f1386e08ab9ed7efc437118e7dd70c0e5fce",
+      "size_bytes": 674842161,
+      "arch": "aarch64",
+      "distro": "kali",
+      "desktop": "openbox",
+      "notes": "Kali OPENBOX (automated build, 638 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:31:23Z",
+      "encrypted": {
+        "filename": "pocketlinux-kali-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-kali-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "06f10faf4130e091f51a4d0c14575c7283cbfe769a3590396daca5a7ba71bb8b",
+        "size_bytes": 674862794
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626234318",
+        "packages": 638,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-ubuntu-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "03113266264fb5e56c025e307070859f5dcecfdd5eec65dc23976a2861fa0ebe",
+      "size_bytes": 475434657,
+      "arch": "aarch64",
+      "distro": "ubuntu",
+      "desktop": "openbox",
+      "notes": "Ubuntu OPENBOX (automated build, 462 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:30:19Z",
+      "encrypted": {
+        "filename": "pocketlinux-ubuntu-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-ubuntu-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "7b9e1a2c88c53d6ed4b57b22c2ca46b8935e572cf39f16ab4814cc38962f39d4",
+        "size_bytes": 475449210
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626234318",
+        "packages": 462,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "filename": "pocketlinux-void-openbox-aarch64-v1.0.0.tar.gz",
+      "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-openbox-aarch64-v1.0.0.tar.gz",
+      "sha256": "33f73e17a431269b06e5b6b0766fece7a0609b9b87d978180be09ab509ac3fee",
+      "size_bytes": 482767206,
+      "arch": "aarch64",
+      "distro": "void",
+      "desktop": "openbox",
+      "notes": "Void OPENBOX (automated build, 397 packages)",
+      "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
+      "created_at": "2026-10-28T03:32:57Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-openbox-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-openbox-aarch64-v1.0.0.plbk",
+        "sha256": "db42fd550b1615cea929870a0623269f594c8755e4a2a6f610dbc987ed231e8f",
+        "size_bytes": 482781983
+      },
+      "ci": {
+        "run_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/actions/runs/40626234318",
+        "packages": 397,
+        "recipes_commit": "e3cd8b38d33251c396b04c6f0f651a8b4401d001"
+      },
+      "staging": true
+    },
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "tag": "v1.0.0",
       "filename": "pocketlinux-archlinux-icewm-aarch64-v1.0.0.tar.gz",
       "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-icewm-aarch64-v1.0.0.tar.gz",
       "sha256": "b72a22db238a080d51a96e77f9908f68a3d1f3eebcd672f78d6b3566a788b446",
