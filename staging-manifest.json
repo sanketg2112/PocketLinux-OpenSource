@@ -1822,7 +1822,17 @@
       "desktop": "xfce",
       "notes": "Minor adjustments to theme and stuff",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.1",
-      "created_at": "2026-07-12T16:53:18Z"
+      "created_at": "2026-07-12T16:53:18Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-xfce-aarch64-v1.0.1.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-xfce-aarch64-v1.0.1.plbk",
+        "sha256": "b8d57f4a4b34e833919768f88a97b86d9ab47b24b230bea66bc076870c385643",
+        "size_bytes": 592646089
+      },
+      "encrypted_filename": "pocketlinux-debian-xfce-aarch64-v1.0.1.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.1/pocketlinux-debian-xfce-aarch64-v1.0.1.plbk",
+      "encrypted_sha256": "b8d57f4a4b34e833919768f88a97b86d9ab47b24b230bea66bc076870c385643",
+      "encrypted_size_bytes": 592646089
     },
     {
       "id": "default",
@@ -1837,7 +1847,17 @@
       "desktop": "xfce",
       "notes": "Initial release",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-09-05T17:11:37Z"
+      "created_at": "2026-09-05T17:11:37Z",
+      "encrypted": {
+        "filename": "pocketlinux-artix-xfce-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-xfce-aarch64-v1.0.0.plbk",
+        "sha256": "b4ab25763461baecea17e53340d24f740f7ff525d228b92cb5bdda13bc364885",
+        "size_bytes": 588869054
+      },
+      "encrypted_filename": "pocketlinux-artix-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-artix-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_sha256": "b4ab25763461baecea17e53340d24f740f7ff525d228b92cb5bdda13bc364885",
+      "encrypted_size_bytes": 588869054
     },
     {
       "id": "default",
@@ -1852,7 +1872,17 @@
       "desktop": "xfce",
       "notes": "Initial release",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-09-05T17:00:11Z"
+      "created_at": "2026-09-05T17:00:11Z",
+      "encrypted": {
+        "filename": "pocketlinux-void-xfce-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-xfce-aarch64-v1.0.0.plbk",
+        "sha256": "246ea067f530c4cce556277a2d104bac51cb26b070651512789ea3d223257240",
+        "size_bytes": 726196052
+      },
+      "encrypted_filename": "pocketlinux-void-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-void-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_sha256": "246ea067f530c4cce556277a2d104bac51cb26b070651512789ea3d223257240",
+      "encrypted_size_bytes": 726196052
     },
     {
       "id": "default",
@@ -2017,7 +2047,17 @@
       "desktop": "xfce",
       "notes": "Initial build",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-07-16T17:27:57Z"
+      "created_at": "2026-07-16T17:27:57Z",
+      "encrypted": {
+        "filename": "pocketlinux-archlinux-xfce-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-xfce-aarch64-v1.0.0.plbk",
+        "sha256": "cd0e33ec3b55748c574cc0e92d93f6d30dd4836d1a6ec839d64593c438b46eba",
+        "size_bytes": 1008591545
+      },
+      "encrypted_filename": "pocketlinux-archlinux-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-archlinux-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_sha256": "cd0e33ec3b55748c574cc0e92d93f6d30dd4836d1a6ec839d64593c438b46eba",
+      "encrypted_size_bytes": 1008591545
     },
     {
       "id": "default",
@@ -2032,7 +2072,17 @@
       "desktop": "xfce",
       "notes": "First official Debian XFCE golden image",
       "html_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/tag/v1.0.0",
-      "created_at": "2026-07-12T11:05:00Z"
+      "created_at": "2026-07-12T11:05:00Z",
+      "encrypted": {
+        "filename": "pocketlinux-debian-xfce-aarch64-v1.0.0.plbk",
+        "url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-xfce-aarch64-v1.0.0.plbk",
+        "sha256": "7797272de9445e613201a12d16bfbed9f85a7b9289835e378159bd0ace008752",
+        "size_bytes": 641895115
+      },
+      "encrypted_filename": "pocketlinux-debian-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_url": "https://github.com/sanketg2112/PocketLinux-OpenSource/releases/download/v1.0.0/pocketlinux-debian-xfce-aarch64-v1.0.0.plbk",
+      "encrypted_sha256": "7797272de9445e613201a12d16bfbed9f85a7b9289835e378159bd0ace008752",
+      "encrypted_size_bytes": 641895115
     }
   ],
   "hidden_combos": [],
