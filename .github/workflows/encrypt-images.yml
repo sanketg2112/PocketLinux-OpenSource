@@ -1,0 +1,210 @@
+name: Encrypt published images
+
+# Adds the missing .plbk to catalog images that were published as .tar.gz only.
+# Each image is downloaded from its release, checked against manifest.json,
+# encrypted with imagebuilder/encrypt.sh (round trip), uploaded next to the tar,
+# then downloaded again and decrypted to prove the release copy restores the
+# exact tar. manifest.json is not changed here: attach the results with
+# PocketLinux_Releases/attach_plbk.py --run <run-id> (private repo).
+
+on:
+  workflow_dispatch:
+    inputs:
+      images:
+        description: Comma-separated .tar.gz filenames from manifest.json, or "missing" = every image without a .plbk
+        type: string
+        default: missing
+      recipes_ref:
+        description: LinuxMobile branch, tag or commit with imagebuilder/
+        type: string
+        default: main
+      publish:
+        description: Upload the .plbk to the image's release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: encrypt-images
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          IMAGES: ${{ inputs.images }}
+        run: |
+          python3 - << 'EOF' >> "$GITHUB_OUTPUT"
+          import json, os, sys
+          images = json.load(open("manifest.json")).get("images", [])
+          want = os.environ["IMAGES"].strip()
+          if want == "missing":
+              picked = [i for i in images if not isinstance(i.get("encrypted"), dict)]
+          else:
+              names = [n.strip() for n in want.split(",") if n.strip()]
+              by_name = {i.get("filename"): i for i in images}
+              unknown = [n for n in names if n not in by_name]
+              if unknown:
+                  sys.exit(f"not in manifest.json: {unknown}")
+              picked = [by_name[n] for n in names]
+          for i in picked:
+              if not i.get("filename", "").endswith(".tar.gz"):
+                  sys.exit(f"{i.get('filename')}: only .tar.gz images can be encrypted")
+          if not picked:
+              sys.exit("nothing to encrypt")
+          keys = ("filename", "url", "sha256", "size_bytes", "tag", "distro", "desktop")
+          matrix = [{k: i[k] for k in keys} for i in picked]
+          print("matrix=" + json.dumps(matrix))
+          print(json.dumps(matrix, indent=1), file=sys.stderr)
+          EOF
+
+  encrypt:
+    needs: plan
+    name: ${{ matrix.filename }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    env:
+      TAR: ${{ matrix.filename }}
+      TAG: ${{ matrix.tag }}
+      OUT: ${{ github.workspace }}/out
+    steps:
+      # Same sparse fetch as build-images.yml (the private repo has a gitlink checkout chokes on).
+      - name: Checkout recipes (private)
+        env:
+          RECIPES_DEPLOY_KEY: ${{ secrets.RECIPES_DEPLOY_KEY }}
+          RECIPES_REF: ${{ inputs.recipes_ref }}
+        run: |
+          key="$RUNNER_TEMP/recipes_key"
+          printf '%s\n' "$RECIPES_DEPLOY_KEY" > "$key"
+          chmod 600 "$key"
+          export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          git init -q recipes
+          git -C recipes remote add origin git@github.com:sanketg2112/LinuxMobile.git
+          git -C recipes sparse-checkout set --no-cone /imagebuilder/ /tools/DistroCryptoTool.java
+          git -C recipes fetch -q --depth 1 --filter=blob:none origin "$RECIPES_REF"
+          git -C recipes checkout -q FETCH_HEAD
+          rm -f "$key"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Download and check the published tar
+        env:
+          URL: ${{ matrix.url }}
+          SHA: ${{ matrix.sha256 }}
+          SIZE: ${{ matrix.size_bytes }}
+        run: |
+          mkdir -p "$OUT"
+          echo "PLBK=${TAR%.tar.gz}.plbk" >> "$GITHUB_ENV"
+          curl -fsSL --retry 3 -o "$OUT/$TAR" "$URL"
+          size=$(stat -c %s "$OUT/$TAR"); sha=$(sha256sum "$OUT/$TAR" | cut -d' ' -f1)
+          echo "size $size sha256 $sha"
+          [ "$size" = "$SIZE" ] || { echo "::error::size $size, manifest says $SIZE"; exit 1; }
+          [ "$sha" = "$SHA" ] || { echo "::error::sha256 $sha, manifest says $SHA"; exit 1; }
+          # Full gzip + tar read: a truncated or corrupt archive fails here, not on a phone.
+          tar -tzf "$OUT/$TAR" > "$OUT/entries.txt"
+          echo "$(wc -l < "$OUT/entries.txt") entries"
+
+      # Informational: these images already ship, and the validator has grown rules since.
+      - name: Validate (report only)
+        id: validate
+        continue-on-error: true
+        run: |
+          python3 -I recipes/imagebuilder/validate_image.py "$OUT/$TAR" \
+            --distro "${{ matrix.distro }}" --json "$OUT/validate.json"
+
+      - name: Encrypt (.plbk, round trip)
+        run: |
+          recipes/imagebuilder/encrypt.sh "$OUT/$TAR" "$OUT/$PLBK"
+          tool=recipes/tools/DistroCryptoTool.java
+          # Must really be encrypted: not gzip, and a wrong password is rejected.
+          [ "$(head -c 2 "$OUT/$PLBK" | od -An -tx1 | tr -d ' ')" != "1f8b" ] || { echo "::error::.plbk is plain gzip"; exit 1; }
+          if java "$tool" decrypt "$OUT/$PLBK" "$RUNNER_TEMP/wrong" "not-the-password" >/dev/null 2>&1; then
+            echo "::error::.plbk decrypts with a wrong password"; exit 1
+          fi
+          rm -f "$RUNNER_TEMP/wrong"
+
+      - name: Upload to release ${{ matrix.tag }}
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Published assets are immutable: never overwrite an existing .plbk.
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[].name' | grep -qxF "$PLBK"; then
+            echo "::error::$PLBK already exists on $TAG"; exit 1
+          fi
+          gh release upload "$TAG" "$OUT/$PLBK" -R "$GITHUB_REPOSITORY"
+
+      - name: Verify the release copy
+        if: inputs.publish
+        run: |
+          url="https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$PLBK"
+          curl -fsSL --retry 5 --retry-delay 5 -o "$RUNNER_TEMP/$PLBK" "$url"
+          [ "$(sha256sum < "$RUNNER_TEMP/$PLBK" | cut -d' ' -f1)" = "$(sha256sum < "$OUT/$PLBK" | cut -d' ' -f1)" ] \
+            || { echo "::error::downloaded $PLBK differs from the uploaded file"; exit 1; }
+          java recipes/tools/DistroCryptoTool.java decrypt "$RUNNER_TEMP/$PLBK" "$RUNNER_TEMP/restored.tar.gz" >/dev/null
+          [ "$(sha256sum < "$RUNNER_TEMP/restored.tar.gz" | cut -d' ' -f1)" = "${{ matrix.sha256 }}" ] \
+            || { echo "::error::decrypted release copy does not match the published tar"; exit 1; }
+          rm -f "$RUNNER_TEMP/$PLBK" "$RUNNER_TEMP/restored.tar.gz"
+          touch "$OUT/uploaded"
+
+      - name: Report
+        if: always()
+        env:
+          VALIDATE: ${{ steps.validate.outcome }}
+          TAR_SHA: ${{ matrix.sha256 }}
+        run: |
+          [ -f "$OUT/$PLBK" ] || { echo "### $TAR: no .plbk" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          python3 - << 'EOF'
+          import hashlib, json, os
+          out, plbk, tag, repo = os.environ["OUT"], os.environ["PLBK"], os.environ["TAG"], os.environ["GITHUB_REPOSITORY"]
+          h = hashlib.sha256()
+          with open(os.path.join(out, plbk), "rb") as f:
+              for chunk in iter(lambda: f.read(1 << 20), b""):
+                  h.update(chunk)
+          rec = {
+              "filename": os.environ["TAR"],
+              "sha256": os.environ["TAR_SHA"],
+              "uploaded": os.path.exists(os.path.join(out, "uploaded")),
+              "validate": os.environ["VALIDATE"],
+              "encrypted": {
+                  "filename": plbk,
+                  "url": f"https://github.com/{repo}/releases/download/{tag}/{plbk}",
+                  "sha256": h.hexdigest(),
+                  "size_bytes": os.path.getsize(os.path.join(out, plbk)),
+              },
+          }
+          json.dump(rec, open(os.path.join(out, "encrypted.json"), "w"), indent=2)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as s:
+              e = rec["encrypted"]
+              s.write(f"### {rec['filename']}\n\n| | |\n|---|---|\n"
+                      f"| .plbk | `{e['filename']}` ({e['size_bytes'] >> 20} MB) |\n"
+                      f"| .plbk sha256 | `{e['sha256']}` |\n"
+                      f"| Round trip | pass |\n| Uploaded + verified | {'yes' if rec['uploaded'] else 'no'} |\n"
+                      f"| Validator (report only) | {rec['validate']} |\n\n")
+          EOF
+
+      - name: Upload result artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plbk-${{ matrix.distro }}-${{ matrix.desktop }}-${{ matrix.tag }}
+          if-no-files-found: ignore
+          retention-days: 30
+          path: |
+            out/encrypted.json
+            out/validate.json
+            out/uploaded
