@@ -66,7 +66,10 @@ jobs:
               sys.exit(f"unknown distros: {bad}")
           def ver(v):
               return tuple(int(x) for x in re.findall(r"\d+", v or "0")[:3])
-          published = {i.get("filename") for i in manifest.get("images", [])}
+          # Public entries are .plbk-only; compare without the archive extension.
+          def stem(n):
+              return re.sub(r"\.(tar\.gz|plbk)$", "", n or "")
+          published = {stem(i.get("filename")) for i in manifest.get("images", [])}
           matrix = []
           for d in distros:
               force = os.environ["FORCE_VERSION"].lstrip("vV").strip()
@@ -81,7 +84,7 @@ jobs:
                   else:
                       version = "1.0.0"
               filename = f"pocketlinux-{d}-{desktop}-aarch64-v{version}.tar.gz"
-              if filename in published:
+              if stem(filename) in published:
                   sys.exit(f"{filename} is already in manifest.json; published assets are immutable")
               matrix.append({"distro": d, "desktop": desktop, "version": version})
           print("matrix=" + json.dumps(matrix))
@@ -218,7 +221,7 @@ jobs:
       - name: Update and commit staging-manifest.json
         run: |
           cat > "$RUNNER_TEMP/stage.py" << 'EOF'
-          import glob, json, os
+          import glob, json, os, re
           manifest = json.load(open("manifest.json"))
           staging = json.load(open("staging-manifest.json")) if os.path.exists("staging-manifest.json") else {}
           prior = [i for i in staging.get("images", []) if i.get("staging")]
@@ -233,8 +236,10 @@ jobs:
               if os.path.exists(os.path.join(d, "uploaded")) and gates.get("validate") == "pass" and gates.get("smoke") == "pass":
                   img["staging"] = True
                   added.append(img)
+          # Public entries are .plbk-only, staged ones the .tar.gz: compare without the extension.
+          stem = lambda n: re.sub(r"\.(tar\.gz|plbk)$", "", n or "")
           keep = [i for i in prior if i["filename"] not in {a["filename"] for a in added}
-                  and i["filename"] not in {m.get("filename") for m in manifest.get("images", [])}]
+                  and stem(i["filename"]) not in {stem(m.get("filename")) for m in manifest.get("images", [])}]
           out = dict(manifest)
           out["images"] = added + keep + list(manifest.get("images", []))
           out["staging_note"] = "Debug builds only: manifest.json plus unpromoted candidates (staging: true)."

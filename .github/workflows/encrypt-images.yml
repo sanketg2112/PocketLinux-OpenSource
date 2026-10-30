@@ -46,7 +46,9 @@ jobs:
           images = json.load(open("manifest.json")).get("images", [])
           want = os.environ["IMAGES"].strip()
           if want == "missing":
-              picked = [i for i in images if not isinstance(i.get("encrypted"), dict)]
+              # Public entries with a .plbk list only the .plbk; tar-only ones still need one.
+              picked = [i for i in images if not isinstance(i.get("encrypted"), dict)
+                        and i.get("filename", "").endswith(".tar.gz")]
           else:
               names = [n.strip() for n in want.split(",") if n.strip()]
               by_name = {i.get("filename"): i for i in images}
