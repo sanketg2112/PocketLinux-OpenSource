@@ -2,7 +2,7 @@ name: Build container images
 
 # Builds PocketLinux catalog images (distro + desktop) on native arm64 runners,
 # gates them (static validator + headless desktop smoke test), uploads passing
-# images to the v<version> release and lists them in staging-manifest.json.
+# images (.plbk only) to the v<version> release and lists them in staging-manifest.json.
 # manifest.json (what users get) is only changed by promote_images.py.
 #
 # Recipes live in the private LinuxMobile repo (imagebuilder/ + desktop installers)
@@ -178,7 +178,12 @@ jobs:
               --notes "PocketLinux container images $tag. Images become available in the app once listed in manifest.json." \
               || gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null
           fi
-          gh release upload "$tag" "$OUT/$NAME.tar.gz" "$OUT/$NAME.plbk" -R "$GITHUB_REPOSITORY" --clobber
+          # Phones only download the .plbk; the tar stays on the runner (gates + encrypt input).
+          gh release upload "$tag" "$OUT/$NAME.plbk" -R "$GITHUB_REPOSITORY" --clobber
+          # A re-staged image from before .plbk-only uploads may still have its tar here.
+          if gh release view "$tag" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[].name' | grep -qxF "$NAME.tar.gz"; then
+            gh release delete-asset "$tag" "$NAME.tar.gz" -R "$GITHUB_REPOSITORY" -y
+          fi
           touch "$OUT/uploaded"
 
       - name: Report
