@@ -14,7 +14,7 @@ on:
       desktop:
         description: Catalog desktop id
         type: choice
-        options: [xfce, mate, lxqt, kde, cinnamon, icewm, i3, openbox, lxde]
+        options: [xfce, mate, lxqt, kde, cinnamon, icewm, i3, openbox, lxde, phosh]
         default: mate
       distros:
         description: Comma-separated distros (ubuntu,debian,kali,alpine,archlinux,artix,fedora,void,opensuse)
@@ -117,7 +117,7 @@ jobs:
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
           git init -q recipes
           git -C recipes remote add origin git@github.com:sanketg2112/LinuxMobile.git
-          git -C recipes sparse-checkout set --no-cone /imagebuilder/ '/app/src/debug/assets/install_desktop_x11_*.sh' /tools/DistroCryptoTool.java
+          git -C recipes sparse-checkout set --no-cone /imagebuilder/ '/app/src/debug/assets/install_desktop_x11_*.sh' /app/src/main/assets/pocketlinux_asfix.so /tools/DistroCryptoTool.java
           git -C recipes fetch -q --depth 1 --filter=blob:none origin "$RECIPES_REF"
           git -C recipes checkout -q FETCH_HEAD
           rm -f "$key"
