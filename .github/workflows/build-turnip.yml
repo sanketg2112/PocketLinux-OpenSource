@@ -1,0 +1,141 @@
+name: Build Turnip (DRI3)
+
+# Rebuilds lfdevs's Turnip with DRI3 kept on (see turnip/README.md) for each distro
+# family PocketLinux installs, and uploads the tarballs to a turnip-<version>-pl<n> release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      lfdevs_tag:
+        description: lfdevs mesa-for-android-container tag to build
+        type: string
+        default: turnip-26.2.0-devel-20260709
+      mesa_version:
+        description: Version part of asset names
+        type: string
+        default: 26.2.0-devel-20260709
+      pl_rev:
+        description: PocketLinux build revision (pl<n>)
+        type: string
+        default: "1"
+      publish:
+        description: Upload to the release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-turnip
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: ${{ matrix.family }}
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { family: debian_trixie, image: "debian:trixie" }
+          - { family: ubuntu_noble, image: "ubuntu:noble" }
+          - { family: ubuntu_questing, image: "ubuntu:questing" }
+          - { family: ubuntu_resolute, image: "ubuntu:resolute" }
+    container: ${{ matrix.image }}
+    env:
+      NAME: turnip_${{ inputs.mesa_version }}-pl${{ inputs.pl_rev }}_${{ matrix.family }}_arm64
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: turnip
+      - name: Build dependencies
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends ca-certificates curl git gcc g++ pkg-config \
+            python3 python3-pip python3-venv python3-mako python3-packaging python3-yaml ninja-build \
+            bison flex glslang-tools libdrm-dev libx11-dev libx11-xcb-dev libxcb1-dev \
+            libxcb-dri3-dev libxcb-present-dev libxcb-shm0-dev libxcb-randr0-dev libxcb-xfixes0-dev \
+            libxcb-sync-dev libxshmfence-dev libxrandr-dev libexpat1-dev zlib1g-dev libzstd-dev \
+            libwayland-dev wayland-protocols libwayland-bin binutils
+          # Distro meson can be older than Mesa needs (noble has 1.3).
+          python3 -m venv /opt/meson && /opt/meson/bin/pip install -q meson mako packaging pyyaml
+      - name: Fetch source
+        env:
+          TAG: ${{ inputs.lfdevs_tag }}
+        run: |
+          git clone -q --depth 1 -b "$TAG" https://github.com/lfdevs/mesa-for-android-container.git mesa
+          git -C mesa rev-parse HEAD | tee source-commit
+          cat mesa/VERSION
+          cd mesa && for p in ../turnip/patches/*.patch; do git apply -v "$p"; done
+      - name: Build
+        run: |
+          export PATH=/opt/meson/bin:$PATH
+          cd mesa
+          meson setup build/ --prefix=/usr --libdir=lib/aarch64-linux-gnu \
+            -Dplatforms=x11,wayland -Dgallium-drivers= -Dgallium-va=disabled \
+            -Dgallium-mediafoundation=disabled -Dvulkan-drivers=freedreno -Dvulkan-layers= \
+            -Dgles1=disabled -Dgles2=disabled -Dopengl=false -Dgbm=disabled -Dglx=disabled \
+            -Dxlib-lease=disabled -Dfreedreno-kmds=kgsl,msm -Degl=disabled -Dglvnd=disabled \
+            -Dintel-rt=disabled -Dmicrosoft-clc=disabled -Dllvm=disabled -Dvalgrind=disabled \
+            -Dbuild-tests=false -Dlibunwind=disabled -Dlmsensors=disabled \
+            -Dandroid-libbacktrace=disabled -Dbuildtype=release -Dcpp_args=-Wno-narrowing
+          ninja -C build/
+          DESTDIR=/tmp/inst meson install -C build/ --no-rebuild
+      - name: Check and package
+        run: |
+          L=/tmp/inst/usr/lib/aarch64-linux-gnu/libvulkan_freedreno.so
+          nm -D --undefined-only "$L" | grep -E "xcb_dri3_open|xcb_present_pixmap" \
+            || { echo "no DRI3/Present imports"; exit 1; }
+          grep -q "no displays available" mesa/src/freedreno/vulkan/tu_knl_kgsl.cc
+          readelf -d "$L" | sed -n 's/.*NEEDED.*\[\(.*\)\]/\1/p' | tee needed.txt
+          cat /tmp/inst/usr/share/vulkan/icd.d/freedreno_icd.aarch64.json
+          mkdir -p out
+          tar -C /tmp/inst -czf "out/$NAME.tar.gz" --owner=0 --group=0 \
+            ./usr/lib/aarch64-linux-gnu/libvulkan_freedreno.so \
+            ./usr/share/vulkan/icd.d/freedreno_icd.aarch64.json \
+            ./usr/share/drirc.d
+          tar -tzvf "out/$NAME.tar.gz"
+          (cd out && sha256sum "$NAME.tar.gz" | tee "$NAME.tar.gz.sha256")
+          cp needed.txt "out/$NAME.needed.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.NAME }}
+          path: out/
+
+  publish:
+    needs: build
+    if: ${{ inputs.publish }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: turnip
+      - uses: actions/download-artifact@v4
+        with:
+          path: dl
+          merge-multiple: true
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: turnip-${{ inputs.mesa_version }}-pl${{ inputs.pl_rev }}
+          SRC: ${{ inputs.lfdevs_tag }}
+        run: |
+          ls -la dl
+          {
+            echo "Turnip (Vulkan for Adreno) rebuilt from lfdevs/mesa-for-android-container \`$SRC\` with DRI3 kept on."
+            echo "Meson: lfdevs's options with \`-Dfreedreno-kmds=kgsl,msm\`; patch: \`turnip/patches/0001-kgsl-allow-khr-display.patch\`. See turnip/README.md."
+            echo
+            echo "Extract to \`/\` over the lfdevs Mesa install. MIT (Mesa)."
+            echo
+            echo '```'
+            cat dl/*.sha256
+            echo '```'
+          } > notes.md
+          if ! gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "$TAG" --latest=false -F notes.md
+          fi
+          gh release upload "$TAG" dl/*.tar.gz dl/*.sha256 -R "$GITHUB_REPOSITORY" --clobber

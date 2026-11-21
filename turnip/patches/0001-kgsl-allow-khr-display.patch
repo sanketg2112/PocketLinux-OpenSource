@@ -1,0 +1,20 @@
+diff --git a/src/freedreno/vulkan/tu_knl_kgsl.cc b/src/freedreno/vulkan/tu_knl_kgsl.cc
+index c261bf3..cb0aa21 100644
+--- a/src/freedreno/vulkan/tu_knl_kgsl.cc
++++ b/src/freedreno/vulkan/tu_knl_kgsl.cc
+@@ -1715,10 +1715,11 @@ tu_kgsl_get_raytracing(int fd)
+ VkResult
+ tu_knl_kgsl_load(struct tu_instance *instance, int fd)
+ {
+-   if (instance->vk.enabled_extensions.KHR_display) {
+-      return vk_errorf(instance, VK_ERROR_INITIALIZATION_FAILED,
+-                       "I can't KHR_display");
+-   }
++   /* PocketLinux: a libdrm build advertises VK_KHR_display; KGSL has no display
++    * (master_fd = -1 below), so report none instead of failing enumeration for
++    * apps that enable every advertised surface extension. */
++   if (instance->vk.enabled_extensions.KHR_display)
++      mesa_logi("KGSL: VK_KHR_display enabled, no displays available");
+ 
+    struct tu_physical_device *device = (struct tu_physical_device *)
+       vk_zalloc(&instance->vk.alloc, sizeof(*device), 8,
