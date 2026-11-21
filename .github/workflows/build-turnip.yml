@@ -18,8 +18,12 @@ on:
         description: PocketLinux build revision (pl<n>)
         type: string
         default: "1"
+      families:
+        description: Comma list to build (debian_trixie,ubuntu_noble,ubuntu_questing,ubuntu_resolute,fedora_43,fedora_44,void) or all
+        type: string
+        default: all
       publish:
-        description: Upload to the release
+        description: Upload new assets to the release (existing ones are never replaced)
         type: boolean
         default: true
 
@@ -31,26 +35,46 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.p.outputs.matrix }}
+    steps:
+      - id: p
+        env:
+          FAMILIES: ${{ inputs.families }}
+        run: |
+          python3 - << 'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          all_ = [
+            {"family": "debian_trixie", "image": "debian:trixie", "pm": "apt", "libdir": "lib/aarch64-linux-gnu"},
+            {"family": "ubuntu_noble", "image": "ubuntu:noble", "pm": "apt", "libdir": "lib/aarch64-linux-gnu"},
+            {"family": "ubuntu_questing", "image": "ubuntu:questing", "pm": "apt", "libdir": "lib/aarch64-linux-gnu"},
+            {"family": "ubuntu_resolute", "image": "ubuntu:resolute", "pm": "apt", "libdir": "lib/aarch64-linux-gnu"},
+            {"family": "fedora_43", "image": "fedora:43", "pm": "dnf", "libdir": "lib64"},
+            {"family": "fedora_44", "image": "fedora:44", "pm": "dnf", "libdir": "lib64"},
+            {"family": "void", "image": "ghcr.io/void-linux/void-glibc-full:latest", "pm": "xbps", "libdir": "lib"},
+          ]
+          want = os.environ["FAMILIES"].strip()
+          sel = all_ if want in ("", "all") else [f for f in all_ if f["family"] in {w.strip() for w in want.split(",")}]
+          print("matrix=" + json.dumps(sel))
+          PY
+
   build:
+    needs: plan
     name: ${{ matrix.family }}
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - { family: debian_trixie, image: "debian:trixie" }
-          - { family: ubuntu_noble, image: "ubuntu:noble" }
-          - { family: ubuntu_questing, image: "ubuntu:questing" }
-          - { family: ubuntu_resolute, image: "ubuntu:resolute" }
+        include: ${{ fromJSON(needs.plan.outputs.matrix) }}
     container: ${{ matrix.image }}
     env:
       NAME: turnip_${{ inputs.mesa_version }}-pl${{ inputs.pl_rev }}_${{ matrix.family }}_arm64
     steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: turnip
-      - name: Build dependencies
+      - name: Build dependencies (apt)
+        if: matrix.pm == 'apt'
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
@@ -61,8 +85,27 @@ jobs:
             libxcb-dri3-dev libxcb-present-dev libxcb-shm0-dev libxcb-randr0-dev libxcb-xfixes0-dev \
             libxcb-sync-dev libxshmfence-dev libxrandr-dev libexpat1-dev zlib1g-dev libzstd-dev \
             libwayland-dev wayland-protocols libwayland-bin binutils
-          # Distro meson can be older than Mesa needs (noble has 1.3).
-          python3 -m venv /opt/meson && /opt/meson/bin/pip install -q meson mako packaging pyyaml
+      - name: Build dependencies (dnf)
+        if: matrix.pm == 'dnf'
+        run: |
+          dnf install -y git gcc gcc-c++ pkgconf-pkg-config python3 python3-pip python3-mako \
+            python3-pyyaml python3-packaging ninja-build bison flex glslang libdrm-devel libX11-devel \
+            libxcb-devel libxshmfence-devel libXrandr-devel expat-devel zlib-ng-compat-devel \
+            libzstd-devel wayland-devel wayland-protocols-devel binutils tar gzip
+      - name: Build dependencies (xbps)
+        if: matrix.pm == 'xbps'
+        run: |
+          xbps-install -Syu xbps || true
+          xbps-install -Syu
+          xbps-install -y git gcc pkg-config python3 python3-pip python3-Mako python3-yaml \
+            python3-packaging ninja bison flex glslang libdrm-devel libX11-devel libxcb-devel \
+            libxshmfence-devel libXrandr-devel expat-devel zlib-devel libzstd-devel wayland-devel \
+            wayland-protocols binutils tar gzip
+      - name: Meson
+        run: python3 -m venv /opt/meson && /opt/meson/bin/pip install -q meson mako packaging pyyaml
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: turnip
       - name: Fetch source
         env:
           TAG: ${{ inputs.lfdevs_tag }}
@@ -75,7 +118,7 @@ jobs:
         run: |
           export PATH=/opt/meson/bin:$PATH
           cd mesa
-          meson setup build/ --prefix=/usr --libdir=lib/aarch64-linux-gnu \
+          meson setup build/ --prefix=/usr --libdir=${{ matrix.libdir }} \
             -Dplatforms=x11,wayland -Dgallium-drivers= -Dgallium-va=disabled \
             -Dgallium-mediafoundation=disabled -Dvulkan-drivers=freedreno -Dvulkan-layers= \
             -Dgles1=disabled -Dgles2=disabled -Dopengl=false -Dgbm=disabled -Dglx=disabled \
@@ -87,7 +130,7 @@ jobs:
           DESTDIR=/tmp/inst meson install -C build/ --no-rebuild
       - name: Check and package
         run: |
-          L=/tmp/inst/usr/lib/aarch64-linux-gnu/libvulkan_freedreno.so
+          L=/tmp/inst/usr/${{ matrix.libdir }}/libvulkan_freedreno.so
           nm -D --undefined-only "$L" | grep -E "xcb_dri3_open|xcb_present_pixmap" \
             || { echo "no DRI3/Present imports"; exit 1; }
           grep -q "no displays available" mesa/src/freedreno/vulkan/tu_knl_kgsl.cc
@@ -95,7 +138,7 @@ jobs:
           cat /tmp/inst/usr/share/vulkan/icd.d/freedreno_icd.aarch64.json
           mkdir -p out
           tar -C /tmp/inst -czf "out/$NAME.tar.gz" --owner=0 --group=0 \
-            ./usr/lib/aarch64-linux-gnu/libvulkan_freedreno.so \
+            ./usr/${{ matrix.libdir }}/libvulkan_freedreno.so \
             ./usr/share/vulkan/icd.d/freedreno_icd.aarch64.json \
             ./usr/share/drirc.d
           tar -tzvf "out/$NAME.tar.gz"
@@ -108,7 +151,8 @@ jobs:
 
   publish:
     needs: build
-    if: ${{ inputs.publish }}
+    # Publish whatever built; a failed family does not hold back the others.
+    if: ${{ always() && inputs.publish }}
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -138,4 +182,12 @@ jobs:
           if ! gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "$TAG" --latest=false -F notes.md
           fi
-          gh release upload "$TAG" dl/*.tar.gz dl/*.sha256 -R "$GITHUB_REPOSITORY" --clobber
+          # The app pins each asset's sha256: never replace one that is already published.
+          have=$(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[].name')
+          for f in dl/*.tar.gz dl/*.sha256; do
+            n=$(basename "$f")
+            if printf '%s\n' "$have" | grep -qxF "$n"; then echo "keep existing $n"; else gh release upload "$TAG" "$f" -R "$GITHUB_REPOSITORY"; fi
+          done
+          # Release notes list every published checksum.
+          { sed '/^```$/,$d' notes.md; echo '```'; for n in $(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[].name' | grep '\.sha256$'); do gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "$n" -O - ; done; echo '```'; } > notes2.md
+          gh release edit "$TAG" -R "$GITHUB_REPOSITORY" -F notes2.md

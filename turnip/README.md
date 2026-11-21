@@ -15,7 +15,9 @@ X socket. This directory rebuilds the same source with DRI3 kept on.
   Turnip's KGSL backend refused to enumerate when an app enabled it, so vkcube and apps that
   enable every surface extension found no GPU. KGSL now reports no displays instead.
 
-Built by `.github/workflows/build-turnip.yml` on arm64 runners inside each distro's container.
+Built by `.github/workflows/build-turnip.yml` on arm64 runners inside each distro's container
+(Debian trixie, Ubuntu noble / questing / resolute, Fedora 43 / 44, Void glibc). A run only adds
+assets: one already published is never replaced, since PocketLinux pins each checksum.
 Releases are tagged `turnip-<mesa version>-pl<n>`; assets keep lfdevs's tarball layout
 (extract to `/`). License: MIT (Mesa).
 
